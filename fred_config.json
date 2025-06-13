@@ -1,0 +1,9 @@
+{
+  "period":"5y",
+  "series": {
+    "CPIAUCSL": "CPI",
+    "FEDFUNDS": "Federal_Funds_Rate",
+    "UNRATE": "Unemployment_Rate",
+    "GDP": "GDP"
+  }
+}
