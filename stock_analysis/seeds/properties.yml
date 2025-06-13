@@ -1,0 +1,13 @@
+version: 2
+
+seeds:
+  - name: combined_tickers
+    config:
+      column_types:
+        Date: date
+        Ticker: string
+        Close: float
+        High: float
+        Low: float
+        Open: float
+        Volume: float

@@ -8,16 +8,16 @@ from pandas_datareader import data as pdr
 def many_tickers(tickers, start_date, end_date):
 
     df = yf.download(tickers, start=start_date, end=end_date)
-    # df.columns = ['{}_{}'.format(col[0], col[1]) for col in df.columns]  # flatten columns
-    # df = df.reset_index()
-    # df = (
-    #     pd.melt(df, id_vars='Date', var_name='Price_Ticker', value_name='Value')
-    #     .assign(Price_Type=lambda x: x.Price_Ticker.str.split('_').str[0],
-    #             Ticker=lambda x: x.Price_Ticker.str.split('_').str[1])
-    #     .drop(columns='Price_Ticker')
-    #     .pivot_table(index=['Date', 'Ticker'], columns='Price_Type', values='Value')
-    #     .reset_index()
-    # )
+    df.columns = ['{}_{}'.format(col[0], col[1]) for col in df.columns]  # flatten columns
+    df = df.reset_index()
+    df = (
+        pd.melt(df, id_vars='Date', var_name='Price_Ticker', value_name='Value')
+        .assign(Price_Type=lambda x: x.Price_Ticker.str.split('_').str[0],
+                Ticker=lambda x: x.Price_Ticker.str.split('_').str[1])
+        .drop(columns='Price_Ticker')
+        .pivot_table(index=['Date', 'Ticker'], columns='Price_Type', values='Value')
+        .reset_index()
+    )
 
     return df;
 

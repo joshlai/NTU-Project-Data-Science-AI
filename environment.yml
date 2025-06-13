@@ -78,7 +78,7 @@ dependencies:
       - certifi==2025.4.26
       - cffi==1.17.1
       - charset-normalizer==3.4.2
-      - click==8.2.1
+      - click==8.1.7
       - colorama==0.4.6
       - cryptography==45.0.3
       - curl-cffi==0.11.3
@@ -171,4 +171,12 @@ dependencies:
       - urllib3==2.4.0
       - websockets==15.0.1
       - yfinance==0.2.62
-prefix: /home/joshlai/miniconda3/envs/NTUProj
+      - dagster==1.10.18
+      - dagster-cloud==1.10.18
+      - dagster-cloud-cli==1.10.18
+      - dagster-duckdb==0.26.18
+      - dagster-duckdb-pandas==0.26.18
+      - dagster-graphql==1.10.18
+      - dagster-pipes==1.10.18
+      - dagster_shared==1.10.18
+      - dagster-webserver==1.10.18

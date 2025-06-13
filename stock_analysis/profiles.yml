@@ -1,0 +1,12 @@
+stock_analysis:
+  target: dev
+  outputs:
+    threads: 1
+    location: US
+    priority: interactive
+    dev:
+      type: bigquery
+      method: oauth
+      project: ntuproj-462609
+      dataset: stock_analysis
+      retries: 2

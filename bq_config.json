@@ -1,0 +1,9 @@
+{
+  "project_id": "ntuproj-462609",
+  "dataset_id": "stock_analysis",
+  "table_id": "combined_tickers",
+  "table_id_fred":"fred",
+  "table_id_stock_info":"stock_info",
+  "table_id_stock_eps":"stock_eps",
+  "table_id_ta":"techincal_indicator"
+}
