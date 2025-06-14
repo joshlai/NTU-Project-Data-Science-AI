@@ -1,0 +1,9 @@
+SELECT
+  `ticker_symbol`,
+  `company_description`,
+  `company_name`,
+  `country`,
+  `industry`,
+  `sector`
+FROM
+  `ntuproj-462609.stock_analysis.stock_info`
