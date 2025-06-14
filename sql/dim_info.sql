@@ -6,4 +6,4 @@ SELECT
   `industry`,
   `sector`
 FROM
-  `ntuproj-462609.stock_analysis.stock_info`
+  `stock_analysis.stock_info`
