@@ -29,15 +29,15 @@ SELECT
   ta.`rsi_14`,
   ta.`sma_50`,
 FROM
-  `ntuproj-462609.stock_analysis.combined_tickers` t
+  `stock_analysis.combined_tickers` t
 LEFT JOIN
-  `ntuproj-462609.stock_analysis.fred` f
+  `stock_analysis.fred` f
   ON DATE(t.`date`) = DATE(f.`date`)
 LEFT JOIN
-  `ntuproj-462609.stock_analysis.stock_info` i
+  `stock_analysis.stock_info` i
   ON t.ticker_symbol = i.ticker_symbol and DATE(t.`date`) BETWEEN '2025-04-01' AND '2025-06-30'
 LEFT JOIN
-  `ntuproj-462609.stock_analysis.techincal_indicator` ta
+  `stock_analysis.techincal_indicator` ta
   ON DATE(t.`date`) = DATE(ta.`date`) and t.ticker_symbol = ta.ticker_symbol
 ;
 
