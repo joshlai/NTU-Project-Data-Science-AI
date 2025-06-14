@@ -5,5 +5,6 @@
   "table_id_fred":"fred",
   "table_id_stock_info":"stock_info",
   "table_id_stock_eps":"stock_eps",
-  "table_id_ta":"techincal_indicator"
+  "table_id_ta":"techincal_indicator",
+   "key":"/home/joshlai/.config/gcloud/service_acc/ntuproj-462609-f9fe410a6116.json"
 }

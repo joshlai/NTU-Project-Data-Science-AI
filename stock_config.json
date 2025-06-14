@@ -1,4 +1,4 @@
 {
-  "ticker": ["AAPL","CAT","BA"],
+  "ticker": ["AAPL","CAT","BA","NDAQ"],
   "period": "5y"
 }
