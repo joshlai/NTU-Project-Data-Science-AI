@@ -1,0 +1,16 @@
+# This file should be saved at: ~/.dbt/profiles.yml
+
+dbt_yfinance:  # 🔗 This must match the 'profile:' name in dbt_project.yml
+  target: dev    # 🌱 Default environment to use
+  outputs:
+    dev:
+      type: bigquery              # 🚀 Database type (BigQuery)
+      method: service-account     # 🔐 Auth method (recommended for production)
+      project: meta-sanctum-461903-p3    # 🏗️ GCP project ID
+      dataset: stock_analysis         # 🗂️ BigQuery dataset (e.g., dbt_analytics)
+      location: us          # 🌍 BigQuery region
+      keyfile: /home/biscuit/NTU-Project-Data-Science-AI/meta-sanctum-461903-p3-e443652134f2.json    # 📁 Absolute path to your service account JSON key
+      threads: 1                         # 🧵 Number of parallel threads for dbt to use
+      timeout_seconds: 300              # ⏱️ Timeout for BigQuery queries
+
+

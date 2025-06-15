@@ -1,5 +1,4 @@
-### section here is to download yfinance
-
+### section here is to download yfinance jacob's code this is usable. Includes Peihan's orginal code.
 import yfinance as yf
 import pandas as pd
 from google.cloud import bigquery
@@ -36,19 +35,47 @@ dataset_id = bq_config["dataset_id"]
 table_id = bq_config["table_id"]
 
 
-########## Peihan code section################################33
-df = yf.download(ticker_symbols, period=period)
-df.columns = ['{}_{}'.format(col[0], col[1]) for col in df.columns]  # flatten columns
-df = df.reset_index()
 
-df = (
-    pd.melt(df, id_vars='Date', var_name='Price_Ticker', value_name='Value')
-      .assign(Price_Type=lambda x: x.Price_Ticker.str.split('_').str[0],
-              Ticker=lambda x: x.Price_Ticker.str.split('_').str[1])
-      .drop(columns='Price_Ticker')
-      .pivot_table(index=['Date', 'Ticker'], columns='Price_Type', values='Value')
-      .reset_index()
-)
+
+
+# Collect data for each ticker
+all_data = []
+
+for symbol in ticker_symbols:
+    df = yf.Ticker(symbol).history(period=period)
+    df["ticker_symbol"] = symbol  # Add a column to identify the ticker
+    all_data.append(df)
+
+# Combine all into one DataFrame
+combined_df = pd.concat(all_data)
+
+# Optional: Reset index if needed
+combined_df = combined_df.reset_index()
+
+combined_df = combined_df.rename(columns={
+    "Open": "open_price",
+    "Close": "close_price",
+    "High": "high_price",
+    "Low": "low_price",
+    "Volume": "volume_traded",
+    "Dividends":"dividend",
+    "Stock Splits":"stock_splits",
+    "Date":"date"
+})
+
+########## Peihan code section################################33
+##df = yf.download(ticker_symbols, period=period)
+##df.columns = ['{}_{}'.format(col[0], col[1]) for col in df.columns]  # flatten columns
+##df = df.reset_index()
+
+##df = (
+##    pd.melt(df, id_vars='Date', var_name='Price_Ticker', value_name='Value')
+##      .assign(Price_Type=lambda x: x.Price_Ticker.str.split('_').str[0],
+##              Ticker=lambda x: x.Price_Ticker.str.split('_').str[1])
+##      .drop(columns='Price_Ticker')
+##      .pivot_table(index=['Date', 'Ticker'], columns='Price_Type', values='Value')
+##      .reset_index()
+##)
 
 
 ##### Perhan Code Section ########################################
@@ -67,6 +94,6 @@ job_config = bigquery.LoadJobConfig(
 
 # Load DataFrame to BigQuery
 job = client.load_table_from_dataframe(
-    df, f"{project_id}.{dataset_id}.{table_id}", job_config=job_config
+    combined_df, f"{project_id}.{dataset_id}.{table_id}", job_config=job_config
 )
 job.result()  # Wait for completion  # or use .history(start=..., end=...

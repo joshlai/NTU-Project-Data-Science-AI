@@ -4,5 +4,7 @@
   "table_id": "combined_tickers",
   "table_id_fred":"fred",
   "table_id_stock_info":"stock_info",
-  "table_id_stock_eps":"stock_eps"
+  "table_id_stock_eps":"stock_eps",
+  "table_id_ta":"techincal_indicator"
+
 }

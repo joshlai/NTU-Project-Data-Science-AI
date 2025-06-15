@@ -1,0 +1,350 @@
+[0m15:15:39.389822 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2a9a358550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2a994fd690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2a994fd630>]}
+
+
+============================== 15:15:39.393561 | d271b3c3-bb7d-40e4-b459-767295cb0eb7 ==============================
+[0m15:15:39.393561 [info ] [MainThread]: Running with dbt=1.9.2
+[0m15:15:39.394253 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'profiles_dir': '/home/biscuit/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt init yfinance', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m15:15:39.414447 [debug] [MainThread]: Starter project path: /home/biscuit/miniconda3/envs/NTUProj/lib/python3.10/site-packages/dbt/include/starter_project
+[0m15:15:39.429064 [info ] [MainThread]: 
+Your new dbt project "yfinance" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m15:15:39.429527 [info ] [MainThread]: Setting up your profile.
+[0m15:18:28.299876 [info ] [MainThread]: Profile yfinance written to /home/biscuit/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m15:18:28.302427 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 161.51106, "process_in_blocks": "287192", "process_kernel_time": 0.875866, "process_mem_max_rss": "229340", "process_out_blocks": "80", "process_user_time": 2.036138}
+[0m15:18:28.303078 [debug] [MainThread]: Command `dbt init` succeeded at 15:18:28.302962 after 161.51 seconds
+[0m15:18:28.303455 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2a9a358550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2a9a1f5c60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2a75a2fd60>]}
+[0m15:18:28.303842 [debug] [MainThread]: Flushing usage events
+[0m15:18:29.726058 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:18:46.647828 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fef580e04f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fef5724d600>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fef5724d5a0>]}
+
+
+============================== 15:18:46.652035 | c594a4d3-58af-43eb-a6d8-33ec836f05ce ==============================
+[0m15:18:46.652035 [info ] [MainThread]: Running with dbt=1.9.2
+[0m15:18:46.652614 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/biscuit/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m15:18:46.673043 [info ] [MainThread]: dbt version: 1.9.2
+[0m15:18:46.673522 [info ] [MainThread]: python version: 3.10.17
+[0m15:18:46.673857 [info ] [MainThread]: python path: /home/biscuit/miniconda3/envs/NTUProj/bin/python
+[0m15:18:46.674157 [info ] [MainThread]: os info: Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m15:18:48.071097 [info ] [MainThread]: Using profiles dir at /home/biscuit/.dbt
+[0m15:18:48.071605 [info ] [MainThread]: Using profiles.yml file at /home/biscuit/.dbt/profiles.yml
+[0m15:18:48.071998 [info ] [MainThread]: Using dbt_project.yml file at /home/biscuit/NTU-Project-Data-Science-AI/dbt_project.yml
+[0m15:18:48.072425 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m15:18:48.073085 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 1.4706702, "process_in_blocks": "102768", "process_kernel_time": 0.849829, "process_mem_max_rss": "225536", "process_out_blocks": "8", "process_user_time": 2.024903}
+[0m15:18:48.073749 [debug] [MainThread]: Command `dbt debug` failed at 15:18:48.073667 after 1.47 seconds
+[0m15:18:48.074035 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fef580e04f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fef57293cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fef335c41c0>]}
+[0m15:18:48.074412 [debug] [MainThread]: Flushing usage events
+[0m15:18:49.334808 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:51:28.069860 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f50af220520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f50ae3c5630>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f50ae3c55d0>]}
+
+
+============================== 15:51:28.074098 | a8f7b3d8-e4b4-4c79-8700-e4e049d49c7b ==============================
+[0m15:51:28.074098 [info ] [MainThread]: Running with dbt=1.9.2
+[0m15:51:28.074636 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/biscuit/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt init dbt-yfinance', 'send_anonymous_usage_stats': 'True'}
+[0m15:51:34.884997 [error] [MainThread]: Encountered an error:
+
+[0m15:51:34.892517 [error] [MainThread]: Traceback (most recent call last):
+  File "/home/biscuit/miniconda3/envs/NTUProj/lib/python3.10/site-packages/dbt/cli/requires.py", line 153, in wrapper
+    result, success = func(*args, **kwargs)
+  File "/home/biscuit/miniconda3/envs/NTUProj/lib/python3.10/site-packages/dbt/cli/requires.py", line 103, in wrapper
+    return func(*args, **kwargs)
+  File "/home/biscuit/miniconda3/envs/NTUProj/lib/python3.10/site-packages/dbt/cli/main.py", line 477, in init
+    results = task.run()
+  File "/home/biscuit/miniconda3/envs/NTUProj/lib/python3.10/site-packages/dbt/task/init.py", line 324, in run
+    project_name = self.get_valid_project_name()
+  File "/home/biscuit/miniconda3/envs/NTUProj/lib/python3.10/site-packages/dbt/task/init.py", line 278, in get_valid_project_name
+    name = click.prompt("Enter a name for your project (letters, digits, underscore)")
+  File "/home/biscuit/miniconda3/envs/NTUProj/lib/python3.10/site-packages/click/termui.py", line 164, in prompt
+    value = prompt_func(prompt)
+  File "/home/biscuit/miniconda3/envs/NTUProj/lib/python3.10/site-packages/click/termui.py", line 147, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m15:51:34.894482 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 6.867885, "process_in_blocks": "55344", "process_kernel_time": 0.146677, "process_mem_max_rss": "93200", "process_out_blocks": "16", "process_user_time": 1.147762}
+[0m15:51:34.895346 [debug] [MainThread]: Command `dbt init` failed at 15:51:34.895199 after 6.87 seconds
+[0m15:51:34.895758 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f50af220520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f50ae3c5d20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f50ae3d16c0>]}
+[0m15:51:34.896175 [debug] [MainThread]: Flushing usage events
+[0m15:51:36.110762 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:51:41.785543 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c53fb84c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c5315d600>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c5315d5a0>]}
+
+
+============================== 15:51:41.788047 | f209f95e-9e92-4491-a9cf-58bd91323ded ==============================
+[0m15:51:41.788047 [info ] [MainThread]: Running with dbt=1.9.2
+[0m15:51:41.788629 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/biscuit/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt init dbt_yfinance', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:51:41.797816 [debug] [MainThread]: Starter project path: /home/biscuit/miniconda3/envs/NTUProj/lib/python3.10/site-packages/dbt/include/starter_project
+[0m15:51:41.805771 [info ] [MainThread]: 
+Your new dbt project "dbt_yfinance" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m15:51:41.806325 [info ] [MainThread]: Setting up your profile.
+[0m15:55:34.368245 [info ] [MainThread]: Profile dbt_yfinance written to /home/biscuit/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m15:55:34.369242 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 221.92296, "process_in_blocks": "190584", "process_kernel_time": 0.890805, "process_mem_max_rss": "227264", "process_out_blocks": "72", "process_user_time": 1.899502}
+[0m15:55:34.369835 [debug] [MainThread]: Command `dbt init` succeeded at 15:55:34.369725 after 221.92 seconds
+[0m15:55:34.370219 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c53fb84c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c537c8220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6c2f5bbd60>]}
+[0m15:55:34.370674 [debug] [MainThread]: Flushing usage events
+[0m15:55:35.327438 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:55:59.158418 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4a2e6d84f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4a2d871600>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4a2d8715a0>]}
+
+
+============================== 15:55:59.160592 | 837fe416-02de-4e94-8804-b46047437334 ==============================
+[0m15:55:59.160592 [info ] [MainThread]: Running with dbt=1.9.2
+[0m15:55:59.161113 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/biscuit/.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m15:55:59.170525 [info ] [MainThread]: dbt version: 1.9.2
+[0m15:55:59.170964 [info ] [MainThread]: python version: 3.10.17
+[0m15:55:59.171352 [info ] [MainThread]: python path: /home/biscuit/miniconda3/envs/NTUProj/bin/python
+[0m15:55:59.171671 [info ] [MainThread]: os info: Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m15:55:59.923323 [info ] [MainThread]: Using profiles dir at /home/biscuit/.dbt
+[0m15:55:59.923842 [info ] [MainThread]: Using profiles.yml file at /home/biscuit/.dbt/profiles.yml
+[0m15:55:59.924270 [info ] [MainThread]: Using dbt_project.yml file at /home/biscuit/NTU-Project-Data-Science-AI/dbt_project.yml
+[0m15:55:59.924816 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m15:55:59.925587 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.8149381, "process_in_blocks": "40", "process_kernel_time": 0.713955, "process_mem_max_rss": "228284", "process_out_blocks": "0", "process_user_time": 2.064978}
+[0m15:55:59.926132 [debug] [MainThread]: Command `dbt debug` failed at 15:55:59.926030 after 0.82 seconds
+[0m15:55:59.926463 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4a2e6d84f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4a2d87fd30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4a09ca8460>]}
+[0m15:55:59.926848 [debug] [MainThread]: Flushing usage events
+[0m15:56:00.949145 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:57:27.613629 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa44ddbc4c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa44cf61600>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa44cf615a0>]}
+
+
+============================== 15:57:27.616095 | d99a3086-6bd7-4973-85b3-dc2b6d28119e ==============================
+[0m15:57:27.616095 [info ] [MainThread]: Running with dbt=1.9.2
+[0m15:57:27.616688 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/biscuit/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m15:57:27.621977 [info ] [MainThread]: dbt version: 1.9.2
+[0m15:57:27.622357 [info ] [MainThread]: python version: 3.10.17
+[0m15:57:27.622656 [info ] [MainThread]: python path: /home/biscuit/miniconda3/envs/NTUProj/bin/python
+[0m15:57:27.622979 [info ] [MainThread]: os info: Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m15:57:28.342994 [info ] [MainThread]: Using profiles dir at /home/biscuit/.dbt
+[0m15:57:28.343508 [info ] [MainThread]: Using profiles.yml file at /home/biscuit/.dbt/profiles.yml
+[0m15:57:28.343939 [info ] [MainThread]: Using dbt_project.yml file at /home/biscuit/NTU-Project-Data-Science-AI/dbt_project.yml
+[0m15:57:28.344388 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m15:57:28.345219 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.7832665, "process_in_blocks": "0", "process_kernel_time": 0.725453, "process_mem_max_rss": "228532", "process_out_blocks": "16", "process_user_time": 2.068084}
+[0m15:57:28.345717 [debug] [MainThread]: Command `dbt debug` failed at 15:57:28.345629 after 0.78 seconds
+[0m15:57:28.346213 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa44ddbc4c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa44cf6fdc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa429384460>]}
+[0m15:57:28.346561 [debug] [MainThread]: Flushing usage events
+[0m15:57:29.298924 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:24:23.116936 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0d8537c430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0d844f9540>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0d844f94e0>]}
+
+
+============================== 16:24:23.123082 | a1c3581c-6d6a-4e62-b278-ec492f6b0de6 ==============================
+[0m16:24:23.123082 [info ] [MainThread]: Running with dbt=1.9.2
+[0m16:24:23.123942 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/biscuit/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m16:24:23.146274 [info ] [MainThread]: dbt version: 1.9.2
+[0m16:24:23.147113 [info ] [MainThread]: python version: 3.10.17
+[0m16:24:23.147780 [info ] [MainThread]: python path: /home/biscuit/miniconda3/envs/NTUProj/bin/python
+[0m16:24:23.148316 [info ] [MainThread]: os info: Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m16:24:24.958599 [info ] [MainThread]: Using profiles dir at /home/biscuit/.dbt
+[0m16:24:24.959305 [info ] [MainThread]: Using profiles.yml file at /home/biscuit/.dbt/profiles.yml
+[0m16:24:24.959618 [info ] [MainThread]: Using dbt_project.yml file at /home/biscuit/NTU-Project-Data-Science-AI/dbt_project.yml
+[0m16:24:24.960001 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m16:24:24.960571 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 1.9152197, "process_in_blocks": "272184", "process_kernel_time": 0.936144, "process_mem_max_rss": "234400", "process_out_blocks": "16", "process_user_time": 2.2246}
+[0m16:24:24.961057 [debug] [MainThread]: Command `dbt debug` failed at 16:24:24.960974 after 1.92 seconds
+[0m16:24:24.961361 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0d8537c430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0d844a4670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f0d84503cd0>]}
+[0m16:24:24.961710 [debug] [MainThread]: Flushing usage events
+[0m16:24:26.075319 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:27:58.702826 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb982b4460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb97459690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb97459630>]}
+
+
+============================== 16:27:58.707091 | 67493f94-1416-4032-a2a9-25bef2e88284 ==============================
+[0m16:27:58.707091 [info ] [MainThread]: Running with dbt=1.9.2
+[0m16:27:58.707706 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '.', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run --profiles-dir .', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m16:27:58.708137 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/biscuit/NTU-Project-Data-Science-AI/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m16:27:58.710007 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.048224106, "process_in_blocks": "77832", "process_kernel_time": 0.102864, "process_mem_max_rss": "92772", "process_out_blocks": "8", "process_user_time": 1.121222}
+[0m16:27:58.710514 [debug] [MainThread]: Command `dbt run` failed at 16:27:58.710420 after 0.05 seconds
+[0m16:27:58.710826 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb982b4460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb97459d80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb97459690>]}
+[0m16:27:58.711144 [debug] [MainThread]: Flushing usage events
+[0m16:27:59.827940 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:29:49.083384 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff014fa84c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff0141495a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff014149540>]}
+
+
+============================== 16:29:49.089851 | 904f3315-7958-4e59-a776-b73da20f9aa7 ==============================
+[0m16:29:49.089851 [info ] [MainThread]: Running with dbt=1.9.2
+[0m16:29:49.090478 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'profiles_dir': '.', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt debug --profiles-dir .', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m16:29:49.112786 [info ] [MainThread]: dbt version: 1.9.2
+[0m16:29:49.113249 [info ] [MainThread]: python version: 3.10.17
+[0m16:29:49.113758 [info ] [MainThread]: python path: /home/biscuit/miniconda3/envs/NTUProj/bin/python
+[0m16:29:49.114101 [info ] [MainThread]: os info: Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m16:29:49.114495 [info ] [MainThread]: Using profiles dir at .
+[0m16:29:49.114784 [info ] [MainThread]: Using profiles.yml file at ./profiles.yml
+[0m16:29:49.115082 [info ] [MainThread]: Using dbt_project.yml file at /home/biscuit/NTU-Project-Data-Science-AI/dbt_project.yml
+[0m16:29:49.115413 [info ] [MainThread]: Configuration:
+[0m16:29:49.115725 [info ] [MainThread]:   profiles.yml file [[31mERROR not found[0m]
+[0m16:29:49.116052 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m16:29:49.116349 [info ] [MainThread]: Required dependencies:
+[0m16:29:49.116665 [debug] [MainThread]: Executing "git --help"
+[0m16:29:49.131213 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m16:29:49.131720 [debug] [MainThread]: STDERR: "b''"
+[0m16:29:49.132021 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m16:29:49.132349 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m16:29:49.132733 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m16:29:49.133019 [info ] [MainThread]: dbt looked for a profiles.yml file in ./profiles.yml, but did
+not find one. For more information on configuring your profile, consult the
+documentation:
+
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m16:29:49.133325 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/biscuit/NTU-Project-Data-Science-AI/dbt_project.yml> not found
+
+[0m16:29:49.135248 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.09389609, "process_in_blocks": "78592", "process_kernel_time": 0.082252, "process_mem_max_rss": "93312", "process_out_blocks": "24", "process_user_time": 1.16329}
+[0m16:29:49.136574 [debug] [MainThread]: Command `dbt debug` failed at 16:29:49.136330 after 0.10 seconds
+[0m16:29:49.137316 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff014fa84c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff014149660>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ff01415bd30>]}
+[0m16:29:49.137988 [debug] [MainThread]: Flushing usage events
+[0m16:29:50.210129 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:30:44.474144 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa45fdf4490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa45ef8d660>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa45ef8d600>]}
+
+
+============================== 16:30:44.478268 | 9e5f248f-bfab-4d53-9c69-d7d7ffd2331f ==============================
+[0m16:30:44.478268 [info ] [MainThread]: Running with dbt=1.9.2
+[0m16:30:44.479010 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '.', 'log_path': 'logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt run --profiles-dir .', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:30:44.479671 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /home/biscuit/NTU-Project-Data-Science-AI/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m16:30:44.482415 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 0.06374353, "process_in_blocks": "77832", "process_kernel_time": 0.059237, "process_mem_max_rss": "92448", "process_out_blocks": "8", "process_user_time": 1.214366}
+[0m16:30:44.483258 [debug] [MainThread]: Command `dbt run` failed at 16:30:44.483140 after 0.06 seconds
+[0m16:30:44.483640 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa45fdf4490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa45ef8dd50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa45ef8d660>]}
+[0m16:30:44.484011 [debug] [MainThread]: Flushing usage events
+[0m16:30:45.579273 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:32:29.540565 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2e17b244c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2e16ca1600>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2e16ca15a0>]}
+
+
+============================== 16:32:29.546321 | 05e2dc38-037c-4e2e-9b30-a3764215f013 ==============================
+[0m16:32:29.546321 [info ] [MainThread]: Running with dbt=1.9.2
+[0m16:32:29.546888 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'profiles_dir': '/home/biscuit/.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:32:29.572031 [info ] [MainThread]: dbt version: 1.9.2
+[0m16:32:29.572533 [info ] [MainThread]: python version: 3.10.17
+[0m16:32:29.572887 [info ] [MainThread]: python path: /home/biscuit/miniconda3/envs/NTUProj/bin/python
+[0m16:32:29.573213 [info ] [MainThread]: os info: Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m16:32:31.307811 [info ] [MainThread]: Using profiles dir at /home/biscuit/.dbt
+[0m16:32:31.308431 [info ] [MainThread]: Using profiles.yml file at /home/biscuit/.dbt/profiles.yml
+[0m16:32:31.308970 [info ] [MainThread]: Using dbt_project.yml file at /home/biscuit/NTU-Project-Data-Science-AI/dbt_project.yml
+[0m16:32:31.309459 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m16:32:31.310213 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 1.8147881, "process_in_blocks": "272400", "process_kernel_time": 0.934125, "process_mem_max_rss": "233500", "process_out_blocks": "8", "process_user_time": 2.029307}
+[0m16:32:31.310686 [debug] [MainThread]: Command `dbt debug` failed at 16:32:31.310595 after 1.82 seconds
+[0m16:32:31.311083 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2e17b244c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2e16cabdc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2df307c460>]}
+[0m16:32:31.311551 [debug] [MainThread]: Flushing usage events
+[0m16:32:32.509630 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:34:26.555977 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d0ae70460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d0a0095a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d0a009540>]}
+
+
+============================== 16:34:26.561314 | 8199de26-6beb-41d3-99c3-0b436bbf3a66 ==============================
+[0m16:34:26.561314 [info ] [MainThread]: Running with dbt=1.9.2
+[0m16:34:26.561871 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/biscuit/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:34:26.581501 [info ] [MainThread]: dbt version: 1.9.2
+[0m16:34:26.581968 [info ] [MainThread]: python version: 3.10.17
+[0m16:34:26.582288 [info ] [MainThread]: python path: /home/biscuit/miniconda3/envs/NTUProj/bin/python
+[0m16:34:26.582606 [info ] [MainThread]: os info: Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m16:34:28.283340 [info ] [MainThread]: Using profiles dir at /home/biscuit/.dbt
+[0m16:34:28.283848 [info ] [MainThread]: Using profiles.yml file at /home/biscuit/.dbt/profiles.yml
+[0m16:34:28.284211 [info ] [MainThread]: Using dbt_project.yml file at /home/biscuit/NTU-Project-Data-Science-AI/dbt_project.yml
+[0m16:34:28.284632 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m16:34:28.285237 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 1.7750014, "process_in_blocks": "272392", "process_kernel_time": 0.815809, "process_mem_max_rss": "234060", "process_out_blocks": "16", "process_user_time": 2.044321}
+[0m16:34:28.285781 [debug] [MainThread]: Command `dbt debug` failed at 16:34:28.285682 after 1.78 seconds
+[0m16:34:28.286088 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d0ae70460>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7ce64205e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7ce6420520>]}
+[0m16:34:28.286461 [debug] [MainThread]: Flushing usage events
+[0m16:34:29.425405 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:35:20.197154 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbbb632c4c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbbb54d5600>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbbb54d55a0>]}
+
+
+============================== 16:35:20.201764 | b7e5e9d2-b53c-431b-bf17-206da8a999b5 ==============================
+[0m16:35:20.201764 [info ] [MainThread]: Running with dbt=1.9.2
+[0m16:35:20.202322 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/biscuit/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m16:35:20.224173 [info ] [MainThread]: dbt version: 1.9.2
+[0m16:35:20.224634 [info ] [MainThread]: python version: 3.10.17
+[0m16:35:20.224939 [info ] [MainThread]: python path: /home/biscuit/miniconda3/envs/NTUProj/bin/python
+[0m16:35:20.225245 [info ] [MainThread]: os info: Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m16:35:22.019780 [info ] [MainThread]: Using profiles dir at /home/biscuit/.dbt
+[0m16:35:22.020299 [info ] [MainThread]: Using profiles.yml file at /home/biscuit/.dbt/profiles.yml
+[0m16:35:22.020688 [info ] [MainThread]: Using dbt_project.yml file at /home/biscuit/NTU-Project-Data-Science-AI/dbt_project.yml
+[0m16:35:22.021170 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m16:35:22.021859 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 1.877592, "process_in_blocks": "272136", "process_kernel_time": 0.906992, "process_mem_max_rss": "230132", "process_out_blocks": "16", "process_user_time": 2.288575}
+[0m16:35:22.022351 [debug] [MainThread]: Command `dbt debug` failed at 16:35:22.022262 after 1.88 seconds
+[0m16:35:22.022665 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbbb632c4c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbbb54dfdc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbb918f4460>]}
+[0m16:35:22.023007 [debug] [MainThread]: Flushing usage events
+[0m16:35:23.141186 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:36:46.903359 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f922c7644f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f922b8fd600>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f922b8fd5a0>]}
+
+
+============================== 16:36:46.909585 | 7c8b9850-677e-4f04-8d22-7384007170a4 ==============================
+[0m16:36:46.909585 [info ] [MainThread]: Running with dbt=1.9.2
+[0m16:36:46.910157 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'debug': 'False', 'profiles_dir': '/home/biscuit/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:36:46.931283 [info ] [MainThread]: dbt version: 1.9.2
+[0m16:36:46.931752 [info ] [MainThread]: python version: 3.10.17
+[0m16:36:46.932081 [info ] [MainThread]: python path: /home/biscuit/miniconda3/envs/NTUProj/bin/python
+[0m16:36:46.932360 [info ] [MainThread]: os info: Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m16:36:48.638433 [info ] [MainThread]: Using profiles dir at /home/biscuit/.dbt
+[0m16:36:48.638985 [info ] [MainThread]: Using profiles.yml file at /home/biscuit/.dbt/profiles.yml
+[0m16:36:48.639449 [info ] [MainThread]: Using dbt_project.yml file at /home/biscuit/NTU-Project-Data-Science-AI/dbt_project.yml
+[0m16:36:48.639877 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m16:36:48.640670 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 1.7904308, "process_in_blocks": "272400", "process_kernel_time": 0.777072, "process_mem_max_rss": "232192", "process_out_blocks": "8", "process_user_time": 2.149564}
+[0m16:36:48.641234 [debug] [MainThread]: Command `dbt debug` failed at 16:36:48.641115 after 1.79 seconds
+[0m16:36:48.641610 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f922c7644f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f922b90bd30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9207cb4460>]}
+[0m16:36:48.642162 [debug] [MainThread]: Flushing usage events
+[0m16:36:49.745185 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m16:40:01.057002 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbd9c894490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbd9ba0d5a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbd9ba0d540>]}
+
+
+============================== 16:40:01.062180 | 429819cb-5b3f-4a16-b5fb-ae3cfdfc005b ==============================
+[0m16:40:01.062180 [info ] [MainThread]: Running with dbt=1.9.2
+[0m16:40:01.062738 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/biscuit/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt debug', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m16:40:01.081934 [info ] [MainThread]: dbt version: 1.9.2
+[0m16:40:01.082398 [info ] [MainThread]: python version: 3.10.17
+[0m16:40:01.082710 [info ] [MainThread]: python path: /home/biscuit/miniconda3/envs/NTUProj/bin/python
+[0m16:40:01.083033 [info ] [MainThread]: os info: Linux-5.15.153.1-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m16:40:02.778523 [info ] [MainThread]: Using profiles dir at /home/biscuit/.dbt
+[0m16:40:02.779085 [info ] [MainThread]: Using profiles.yml file at /home/biscuit/.dbt/profiles.yml
+[0m16:40:02.779541 [info ] [MainThread]: Using dbt_project.yml file at /home/biscuit/NTU-Project-Data-Science-AI/dbt_project.yml
+[0m16:40:02.780001 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m16:40:02.780865 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 1.7679517, "process_in_blocks": "272400", "process_kernel_time": 0.901325, "process_mem_max_rss": "229688", "process_out_blocks": "8", "process_user_time": 2.076087}
+[0m16:40:02.781418 [debug] [MainThread]: Command `dbt debug` failed at 16:40:02.781297 after 1.77 seconds
+[0m16:40:02.781797 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbd9c894490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbd77db05e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbd77db0520>]}
+[0m16:40:02.782188 [debug] [MainThread]: Flushing usage events
+[0m16:40:03.915801 [debug] [MainThread]: An error was encountered while trying to flush usage events
