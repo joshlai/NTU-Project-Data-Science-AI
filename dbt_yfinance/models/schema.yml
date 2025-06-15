@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: fact_security
+    description: "Fact table for security"
+    columns:
+      - name: fact_security_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      # - name: date_id
+      #   description: "The foreign key to the date dimension"
+      #   tests:
+      #     - relationships:
+      #         to: ref('dim_date')
+      #         field: date_id
+      # - name: info_id
+      #   description: "The foreign key to the info dimension"
+      #   tests:
+      #     - relationships:
+      #         to: ref('dim_info')
+      #         field: info_id

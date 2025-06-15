@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: stock_analysis
+    database: ntuproj-462609
+    tables:
+      - name: combined_tickers
+      - name: fred
+      - name: stock_info
+      - name: techincal_indicator
