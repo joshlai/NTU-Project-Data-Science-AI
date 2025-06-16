@@ -4,9 +4,14 @@ models:
   - name: fact_security
     description: "Fact table for security"
     tests:
-      - dbt_expectations.expect_compound_columns_to_be_unique:
-          column_list: ["ticker_symbol", "date"]
-    columns:
+      columns:
+      - name: fact_security_id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#              column_type: integer
       - name: date
         description: "The foreign key to the date dimension"
         tests:
@@ -53,85 +58,85 @@ models:
 #              column_type: float
       - name: dividend
         description: "dividend of the security"
-#        tests:
-#          - dbt_expectations.expect_column_values_to_be_of_type:
-#              column_type: float
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: float
       - name: stock_splits
         description: "stock splits of the security"
-#        tests:
-#          - dbt_expectations.expect_column_values_to_be_of_type:
-#              column_type: float
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: float
       - name: volume_traded
         description: "volume_traded of the security"
         tests:
           - not_null
-#          - dbt_expectations.expect_column_values_to_be_of_type:
-#              column_type: float
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: float
       - name: GDP_growth_rate
         description: "GDP growth rate of the securitie's country"
-#        tests:
-#          - dbt_expectations.expect_column_values_to_be_of_type:
-#              column_type: float
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: float
       - name: UMCSENT
         description: "consumer sentiment of the security's country"
-#        tests:
-#          - dbt_expectations.expect_column_values_to_be_of_type:
-#              column_type: float
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: float
       - name: inflation_rate
         description: "inflation rate of the security's country"
-#        tests:
-#          - dbt_expectations.expect_column_values_to_be_of_type:
-#              column_type: float
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: float
       - name: interest_rate
         description: "interest rate of the security's country"
-#        tests:
-#          - dbt_expectations.expect_column_values_to_be_of_type:
-#              column_type: float
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: float
       - name: unemployment_rate
         description: "unemployment rate of the security's country"
-#        tests:
-#          - dbt_expectations.expect_column_values_to_be_of_type:
-#              column_type: float
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: float
       - name: forward_eps
         description: "forward EPS  of the security"
-#        tests:
-#          - dbt_expectations.expect_column_values_to_be_of_type:
-#              column_type: float
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: float
       - name: forward_pe
         description: "forward PE of the security"
-#        tests:
-#          - dbt_expectations.expect_column_values_to_be_of_type:
-#              column_type: float
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: float
       - name: market_cap
         description: "unemployment rate of the security's country"
-#        tests:
-#          - dbt_expectations.expect_column_values_to_be_of_type:
-#              column_type: integer
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: integer
       - name: trailing_eps
         description: "trailing EPS  of the security"
-#        tests:
-#          - dbt_expectations.expect_column_values_to_be_of_type:
-#              column_type: float
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: float
       - name: trailing_pe
         description: "trailing PE of the security"
-#        tests:
-#          - dbt_expectations.expect_column_values_to_be_of_type:
-#              column_type: float
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: float
       - name: ema_50
         description: "EMA 50 of the security"
- #       tests:
- #         - dbt_expectations.expect_column_values_to_be_of_type:
- #             column_type: float
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: float
       - name: sma_50
         description: "SMA 50 of the security"
- #       tests:
- #         - dbt_expectations.expect_column_values_to_be_of_type:
- #             column_type: float
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: float
       - name: rsi_14
         description: "RSI 14 of the security"
- #       tests:
- #         - dbt_expectations.expect_column_values_to_be_of_type:
- #             column_type: float 
+        tests:
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: float
   - name: dim_info
     description: "Dimension table for security info"
     columns:
