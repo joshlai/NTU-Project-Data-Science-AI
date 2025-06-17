@@ -1,4 +1,4 @@
-Introduction
+#Introduction
 By Following the instructions stated below, users will be able to spin up an ec2 vm with 2 vCPUs , 10gb HDD and 4GB of ram which is useful for running Dagster, Python and DBT.After spinningup the VM please follow environment.md to create an environment for running the necessary libraries.
 
 
