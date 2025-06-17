@@ -3,21 +3,196 @@ version: 2
 models:
   - name: fact_security
     description: "Fact table for security"
+    tests:
+      - dbt_expectations.expect_compound_columns_to_be_unique:
+          column_list: ["ticker_symbol", "date"]
     columns:
-      - name: fact_security_id
+      - name: date
+        description: "The foreign key to the date dimension"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              max_value: "CURRENT_DATE()"
+          - relationships:
+              to: ref('dim_date')
+              field: date
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date
+      - name: ticker_symbol
+        description: "The foreign key to the info dimension"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_info')
+              field: ticker_symbol
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: string
+      - name: close_price
+        description: "close price of the security"
+        tests:
+          - not_null
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#              column_type: float
+      - name: open_price
+        description: "opening price of the security"
+        tests:
+          - not_null
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#              column_type: float
+      - name: high_price
+        description: "highest price of the security"
+        tests:
+          - not_null
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#              column_type: float
+      - name: low_price
+        description: "lowest price of the security"
+        tests:
+          - not_null
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#              column_type: float
+      - name: dividend
+        description: "dividend of the security"
+#        tests:
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#              column_type: float
+      - name: stock_splits
+        description: "stock splits of the security"
+#        tests:
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#              column_type: float
+      - name: volume_traded
+        description: "volume_traded of the security"
+        tests:
+          - not_null
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#              column_type: float
+      - name: GDP_growth_rate
+        description: "GDP growth rate of the securitie's country"
+#        tests:
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#              column_type: float
+      - name: UMCSENT
+        description: "consumer sentiment of the security's country"
+#        tests:
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#              column_type: float
+      - name: inflation_rate
+        description: "inflation rate of the security's country"
+#        tests:
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#              column_type: float
+      - name: interest_rate
+        description: "interest rate of the security's country"
+#        tests:
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#              column_type: float
+      - name: unemployment_rate
+        description: "unemployment rate of the security's country"
+#        tests:
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#              column_type: float
+      - name: industrial_production
+        description: "industrial production of the security's country"
+#        tests:
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#              column_type: float
+      - name: ten_yr_treasury
+        description: "10 years tresaury yield rate of the security's country"
+#        tests:
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#              column_type: float
+      - name: forward_eps
+        description: "forward EPS  of the security"
+#        tests:
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#              column_type: float
+      - name: forward_pe
+        description: "forward PE of the security"
+#        tests:
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#              column_type: float
+      - name: market_cap
+        description: "unemployment rate of the security's country"
+#        tests:
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#              column_type: integer
+      - name: trailing_eps
+        description: "trailing EPS  of the security"
+#        tests:
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#              column_type: float
+      - name: trailing_pe
+        description: "trailing PE of the security"
+#        tests:
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#              column_type: float
+      - name: ema_50
+        description: "EMA 50 of the security"
+ #       tests:
+ #         - dbt_expectations.expect_column_values_to_be_of_type:
+ #             column_type: float
+      - name: sma_50
+        description: "SMA 50 of the security"
+ #       tests:
+ #         - dbt_expectations.expect_column_values_to_be_of_type:
+ #             column_type: float
+      - name: rsi_14
+        description: "RSI 14 of the security"
+ #       tests:
+ #         - dbt_expectations.expect_column_values_to_be_of_type:
+ #             column_type: float 
+  - name: dim_info
+    description: "Dimension table for security info"
+    columns:
+      - name: ticker_symbol
         description: "The primary key for this table"
         tests:
           - unique
           - not_null
-      # - name: date_id
-      #   description: "The foreign key to the date dimension"
-      #   tests:
-      #     - relationships:
-      #         to: ref('dim_date')
-      #         field: date_id
-      # - name: info_id
-      #   description: "The foreign key to the info dimension"
-      #   tests:
-      #     - relationships:
-      #         to: ref('dim_info')
-      #         field: info_id
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: string
+      - name: company_description
+        description: "The description of the company"
+        tests:
+          - not_null
+          - unique
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: string
+      - name: company_name
+        description: "The name of the company"
+        tests:
+          - not_null
+          - unique
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: string
+      - name: country
+        description: "The country of the company"
+        tests:
+#          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: string
+      - name: industry
+        description: "The industry of the company"
+        tests:
+#          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: string
+      - name: sector
+        description: "The sector of the company"
+        tests:
+#          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: string
+  - name: dim_date
+    description: "Dimension table for date"
+    columns:
+      - name: date
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: date
+          - dbt_utils.accepted_range:
+              max_value: "CURRENT_DATE()"
