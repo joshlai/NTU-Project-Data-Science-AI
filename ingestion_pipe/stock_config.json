@@ -1,4 +1,6 @@
 {
-  "ticker": ["AAPL","CAT","BA"],
-  "period": "5y"
+  "ticker": ["AAPL","CAT","BA","NDAQ","XLK","XLY","XLC","XLI","XLB","XLE","XLP","XLV","XLU","XLF","XLRE"],
+  "period": "6y"
 }
+
+    

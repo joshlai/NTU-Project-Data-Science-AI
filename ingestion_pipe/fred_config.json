@@ -1,11 +1,13 @@
 {
-  "period":"5y",
+  "period":"6y",
   "series": {
     "CPIAUCSL": "inflation_rate",
     "FEDFUNDS": "interest_rate",
-    "UNRATE": "unemployment_Rate",
+    "UNRATE": "unemployment_rate",
     "GDP": "GDP_growth_rate",
-    "UMCSENT":"UMCSENT" 
+    "UMCSENT":"UMCSENT",
+    "INDPRO" : "industrial_production",
+    "DGS10" : "ten_yr_treasury"
   }
 }
 

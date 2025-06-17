@@ -1,5 +1,5 @@
 from dagster import ScheduleDefinition
-from .dagster_wrapper import upload_yfinance_job,dbt_job
+from .dagster_wrapper import upload_yfinance_job,dbt_job,dbt_test
 
 # Run every day at 8 AM
 daily_schedule = ScheduleDefinition(
@@ -11,4 +11,10 @@ daily_dbt_schedule = ScheduleDefinition(
     job=dbt_job,
     cron_schedule="45 16 * * *",
     name="daily_dbt_job"
+)
+
+daily_dbt_test_schedule = ScheduleDefinition(
+    job=dbt_test,
+    cron_schedule="45 16 * * *",
+    name="daily_dbt_test"
 )

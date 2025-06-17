@@ -50,6 +50,26 @@ def run_dbt_yfinance():
         print(f"Error running dbt: {e}")
         raise
 
+
+
+
+
+@op
+def run_dbt_test():
+    try:
+        subprocess.run(
+            [
+                "dbt",
+                "test",
+                "--project-dir", "/home/biscuit/NTU-Project-Data-Science-AI/dbt_yfinance",
+                "--profiles-dir", "/home/biscuit/NTU-Project-Data-Science-AI/dbt_yfinance",
+            ],
+            check=True
+        )
+    except subprocess.CalledProcessError as e:
+        print(f"Error running dbt: {e}")
+        raise    
+
 @job
 def upload_yfinance_job():
     run_yfinance_script()
@@ -59,3 +79,8 @@ def upload_yfinance_job():
 @job
 def dbt_job():
     run_dbt_yfinance()
+
+
+@job
+def dbt_test():
+    run_dbt_test()
