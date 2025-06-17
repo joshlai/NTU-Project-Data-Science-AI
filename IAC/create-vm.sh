@@ -3,10 +3,10 @@
 # ---- CONFIGURABLE ----
 VM_NAME="vm-elt-2"
 ZONE="us-central1-b"
-MACHINE_TYPE="e2-standard-2"
+MACHINE_TYPE="e2-highcpu-8"
 IMAGE_FAMILY="ubuntu-2204-lts"
 IMAGE_PROJECT="ubuntu-os-cloud"
-DISK_SIZE="10GB"
+DISK_SIZE="20GB"
 
 # ---- EXECUTE ----
 echo "Creating VM: $VM_NAME in $ZONE..."
