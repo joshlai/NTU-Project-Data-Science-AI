@@ -1,12 +1,16 @@
+### Section here is to download fred data. Use the fred_config json to configure what you wish to pull out. 
+
 import pandas_datareader.data as web
 import datetime
-import json
-import pandas as pd
 from dateutil.relativedelta import relativedelta
+import yfinance as yf
+import pandas as pd
 from google.cloud import bigquery
+import json
+import os
 
 
-# Function to compute start_date based on period
+# Function to compute start_date based on period no longer need to specify end and 
 def get_date_range_from_period(period_str):
     today = datetime.date.today()
     end_date = today
@@ -37,6 +41,10 @@ with open("bq_config.json") as f:
 project_id = bq_config["project_id"]
 dataset_id = bq_config["dataset_id"]
 table_id = bq_config["table_id_fred"]
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = bq_config["key"]
+
+# Load series info
+series_config = config["series"]
 
 
 
@@ -44,8 +52,7 @@ table_id = bq_config["table_id_fred"]
 period = config.get("period", "1y")  # default to 1 year if not specified
 start_date, end_date = get_date_range_from_period(period)
 
-# Load series info
-series_config = config["series"]
+
 
 # Download and combine data
 econ_data = pd.DataFrame()
@@ -58,12 +65,7 @@ for series_code, series_name in series_config.items():
 
 
 
-
-
-
-
-
-
+econ_data.index.name = "date"
 
 
 # 3. Initialize BigQuery client
