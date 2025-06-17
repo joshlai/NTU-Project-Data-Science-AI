@@ -14,9 +14,24 @@ def run_fred_script():
     subprocess.run(["python", "injestion_fred.py"], check=True)
 
 
+##@op
+##def run_dbt():
+##    subprocess.run(["dbt", "run"], cwd="/home/biscuit/NTU-Project-Data-Science-AI/dbt_yfinance", check=True)
+
 @op
-def run_dbt():
-    subprocess.run(["dbt", "run"], cwd="/home/biscuit/NTU-Project-Data-Science-AI/dbt_yfinance", check=True)
+def run_dbt_yfinance():
+    subprocess.run(
+        [
+            "dbt", 
+            "run", 
+            "--project-dir", "/home/biscuit/NTU-Project-Data-Science-AI/dbt_yfinance",
+            "--profiles-dir", "/home/biscuit/NTU-Project-Data-Science-AI/dbt_yfinance"
+        ],
+        check=True
+    )
+
+
+
 
 @job
 def upload_yfinance_job():
