@@ -34,6 +34,21 @@ def run_fred_script():
         print(f"Error running ingestion_fred.py: {e}")
         raise
 
+
+@op
+def run_ta_script():
+    try:
+        subprocess.run(
+            ["python", "/home/biscuit/NTU-Project-Data-Science-AI/ingestion_pipe/ingest_compute_ta.py"],
+            check=True
+        )
+    except subprocess.CalledProcessError as e:
+        print(f"Error running ingest_compute_ta.py: {e}")
+        raise
+
+
+
+
 @op
 def run_dbt_yfinance():
     try:
@@ -80,7 +95,13 @@ def upload_yfinance_job():
 def dbt_job():
     run_dbt_yfinance()
 
+@job
+def ta_compute():
+    run_ta_script()
+
 
 @job
 def dbt_test():
     run_dbt_test()
+
+

@@ -1,11 +1,19 @@
 from dagster import ScheduleDefinition
-from .dagster_wrapper import upload_yfinance_job,dbt_job,dbt_test
+from .dagster_wrapper import upload_yfinance_job,dbt_job,dbt_test,ta_compute
 
 # Run every day at 8 AM
 daily_schedule = ScheduleDefinition(
     job=upload_yfinance_job,
     cron_schedule="30 7 * * *",  # ⏰ Cron format: minute hour day month weekday
     name="daily_upload_yfinance_job",
+    execution_timezone="Asia/Singapore"
+)
+
+
+daily_ta_schedule = ScheduleDefinition(
+    job=ta_compute,
+    cron_schedule="37 7 * * *",  # ⏰ Cron format: minute hour day month weekday
+    name="daily_compute_ta",
     execution_timezone="Asia/Singapore"
 
 )
