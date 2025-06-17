@@ -3,3 +3,6 @@ meta-sanctum-461903-p3-e443652134f2.json
 schedule_code.md
 VM_Spinup.md
 Initial_install.md
+__pycache__/
+*.pyc
+

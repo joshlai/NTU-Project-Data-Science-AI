@@ -41,7 +41,7 @@ with open("bq_config.json") as f:
 project_id = bq_config["project_id"]
 dataset_id = bq_config["dataset_id"]
 table_id = bq_config["table_id_fred"]
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = bq_config["key"]
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "meta-sanctum-461903-p3-e443652134f2.json"
 
 # Load series info
 series_config = config["series"]
