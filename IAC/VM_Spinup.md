@@ -82,11 +82,98 @@ Step 13 -optional if you are not proceeding to install the environment. Click on
 
 
 
+![alt text](image-11.png)
+Step 14- Click On the created VM as shown 
+
+![alt text](image-12.png)
+Step 15- Clock on the SSH Connection. When Prompted , Allow Authorization
 
 
 
 
-Step 14 
+![alt text](image-15.png)
+Step 16- Check workign directory and use the cd command to goto the home directory. Use the command "mkdir biscuit" to create a new directory. cd into the newly created directory.
+
+
+
+
+![alt text](image-13.png)
+Step 16- Click on the upload files. Upload the "environment.yml" and the "setup.sh"  Copy it to the newly created biscuit directory. Make the script executable "chmod +x setup.sh" Run the script.
+
+
+
+
+![alt text](image-16.png)
+Step 17 Select Both Services to be restarted
+
+
+![alt text](image-17.png)
+Step 18 Choose lightdm. Follow the instructions on screen to reboot when done.
+
+
+Step 19
+Use the command "conda env create -f environment.yml" to install all the neccessary packages
+
+Step 20
+Activate the conda environment created
+
+Step 21
+a)Use the command below to create the ssh key to link to git hub
+b)ssh-keygen -t ed25519 -C "your_email@example.com"
+c)enter x 3 to accept the file location and to get teh defaults
+
+
+![alt text](image-19.png)
+![alt text](image-20.png)
+Step 22
+Run.
+cat ~/.ssh/id_rsa.pub  Parts have been redacte. The key is quite long. Copy and paste this into Git hub.
+
+
+
+
+Step 24
+Git Clone the repo from Git Hub
+
+
+Step 25
+use the following command to create password
+sudo passwd your user id
+
+
+![alt text](image-21.png)
+
+
+
+
+Step 26
+echo "startxfce4" > ~/.xsession
+cat ~/.xsession
+startxfce4
+sudo systemctl restart xrdp
+sudo reboot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
