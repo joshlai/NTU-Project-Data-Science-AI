@@ -128,13 +128,16 @@ conda activate <your_env_name>
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 Press Enter 3 times to accept defaults.  
-![SSH Key](image-19.png)  
-![SSH Confirm](image-20.png)
+
 
 ### 🔹 Step 22: Copy Public Key to GitHub
 ```bash
 cat ~/.ssh/id_rsa.pub
 ```
+![SSH Key](image-19.png)  
+![SSH Confirm](image-20.png)
+
+
 
 ### 🔹 Step 23: Clone Repository
 ```bash
