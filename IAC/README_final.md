@@ -180,7 +180,7 @@ cd /home/biscuit/NTU-Project-Data-Science-AI/ingestion_pipe
 ```bash
 dagster dev
 ```
-![Dagster](image-23.png)
+![alt text](image-25.png)
 
 ### 🔹 Step 29: Launch Windows RDP
 Open Remote Desktop:  
