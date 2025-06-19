@@ -1,8 +1,9 @@
 # VM Setup and Environment Initialization Guide
 
-This guide provides step-by-step instructions to spin up a GCP VM instance with **2 vCPUs, 10GB HDD**, and **4GB RAM**. This setup is ideal for running **Dagster**, **Python**, and **DBT**.
+This guide provides step-by-step instructions to spin up a GCP VM instance with **2 vCPUs, 10GB HDD**, and **4GB RAM**. This setup is ideal for running **Dagster**, **Python**, and **DBT**.  
 
-> ⚠️ **Note:** Ensure your project uses the exact same file structure to avoid issues. Once the VM is created, refer to `environment.md` to install the required packages.
+
+> ⚠️ **Note:** Ensure your project uses the exact same file structure to avoid issues.
 
 ---
 
@@ -151,7 +152,7 @@ sudo reboot
 ```
 
 ### Step 26  
-Download and upload the **service key** into your project directory.
+Download from big query your service key and upload the **service key** into your project directory.
 
 ### Step 27  
 Navigate to your project ingestion directory:
@@ -167,9 +168,10 @@ dagster dev
 ```
 ![alt text](image-23.png)
 
+![alt text](image-22.png)
 ### Step 29  
 Launch **Windows Remote Desktop (RDP)**:  
-![alt text](image-22.png)
+
 
 ### Step 30  
 Enter the external IP address from the GCP VM settings.
