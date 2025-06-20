@@ -1,0 +1,14 @@
+{
+  "period":"5y",
+  "series": {
+    "CPIAUCSL": "inflation_rate",
+    "FEDFUNDS": "interest_rate",
+    "UNRATE": "unemployment_Rate",
+    "GDP": "GDP_growth_rate",
+    "UMCSENT":"UMCSENT",
+    "INDPRO": "Industrial Production",
+    "DGS10": "10Y Treasury Yield"
+  }
+}
+
+
