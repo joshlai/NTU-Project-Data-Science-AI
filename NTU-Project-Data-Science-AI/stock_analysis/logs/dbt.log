@@ -1,0 +1,1841 @@
+[0m20:18:44.763474 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9bf809ed10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9bf70fe200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9bf70fe1a0>]}
+
+
+============================== 20:18:44.766236 | b1ddb310-8aa3-41c4-8369-5604124b889a ==============================
+[0m20:18:44.766236 [info ] [MainThread]: Running with dbt=1.9.2
+[0m20:18:44.766844 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/peterlim/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/home/peterlim/user_story/stock_analysis/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m20:18:44.777920 [info ] [MainThread]: dbt version: 1.9.2
+[0m20:18:44.778623 [info ] [MainThread]: python version: 3.10.17
+[0m20:18:44.779069 [info ] [MainThread]: python path: /home/peterlim/miniconda3/envs/NTUProj/bin/python
+[0m20:18:44.779762 [info ] [MainThread]: os info: Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39
+[0m20:18:45.836101 [info ] [MainThread]: Using profiles dir at /home/peterlim/.dbt
+[0m20:18:45.836805 [info ] [MainThread]: Using profiles.yml file at /home/peterlim/.dbt/profiles.yml
+[0m20:18:45.837367 [info ] [MainThread]: Using dbt_project.yml file at /home/peterlim/user_story/stock_analysis/dbt_project.yml
+[0m20:18:45.837963 [info ] [MainThread]: adapter type: bigquery
+[0m20:18:45.838487 [info ] [MainThread]: adapter version: 1.9.1
+[0m20:18:45.972595 [info ] [MainThread]: Configuration:
+[0m20:18:45.973233 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m20:18:45.973690 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m20:18:45.974188 [info ] [MainThread]: Required dependencies:
+[0m20:18:45.974638 [debug] [MainThread]: Executing "git --help"
+[0m20:18:45.989708 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m20:18:45.990587 [debug] [MainThread]: STDERR: "b''"
+[0m20:18:45.991306 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m20:18:45.992145 [info ] [MainThread]: Connection:
+[0m20:18:45.992870 [info ] [MainThread]:   method: oauth
+[0m20:18:45.993521 [info ] [MainThread]:   database: dsai-project-462603
+[0m20:18:45.994146 [info ] [MainThread]:   execution_project: dsai-project-462603
+[0m20:18:45.994618 [info ] [MainThread]:   schema: yfinance_econdata
+[0m20:18:45.995135 [info ] [MainThread]:   location: US
+[0m20:18:45.995596 [info ] [MainThread]:   priority: interactive
+[0m20:18:45.996072 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m20:18:45.996564 [info ] [MainThread]:   impersonate_service_account: None
+[0m20:18:45.997004 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m20:18:45.997445 [info ] [MainThread]:   job_retries: 1
+[0m20:18:45.997979 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m20:18:45.998556 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m20:18:45.999071 [info ] [MainThread]:   timeout_seconds: 300
+[0m20:18:45.999558 [info ] [MainThread]:   client_id: None
+[0m20:18:46.000060 [info ] [MainThread]:   token_uri: None
+[0m20:18:46.000557 [info ] [MainThread]:   dataproc_region: None
+[0m20:18:46.001013 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m20:18:46.001576 [info ] [MainThread]:   gcs_bucket: None
+[0m20:18:46.002105 [info ] [MainThread]:   dataproc_batch: None
+[0m20:18:46.002944 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m20:18:46.174345 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m20:18:46.174912 [debug] [MainThread]: On debug: select 1 as id
+[0m20:18:46.175297 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:18:51.798129 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:3c0bf0fe-5f0e-46be-a65e-ec7372a775bf&page=queryresults
+[0m20:18:52.669879 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m20:18:52.670737 [info ] [MainThread]: [32mAll checks passed![0m
+[0m20:18:52.671917 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": true, "command_wall_clock_time": 7.9847274, "process_in_blocks": "4848", "process_kernel_time": 1.472648, "process_mem_max_rss": "244132", "process_out_blocks": "16", "process_user_time": 3.271642}
+[0m20:18:52.673065 [debug] [MainThread]: Command `dbt debug` succeeded at 20:18:52.672821 after 7.99 seconds
+[0m20:18:52.673600 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m20:18:52.674129 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9bf809ed10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9bf7ec8c10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9bbf436260>]}
+[0m20:18:52.674670 [debug] [MainThread]: Flushing usage events
+[0m20:18:53.695918 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:54:52.203811 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa2f86aad10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa2f7631cc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa2f7631db0>]}
+
+
+============================== 20:54:52.208672 | 00f49ee6-8c1e-4781-93b4-296160933b91 ==============================
+[0m20:54:52.208672 [info ] [MainThread]: Running with dbt=1.9.2
+[0m20:54:52.209993 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/peterlim/user_story/stock_analysis', 'debug': 'False', 'version_check': 'True', 'log_path': '/home/peterlim/user_story/stock_analysis/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m20:54:53.860229 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '00f49ee6-8c1e-4781-93b4-296160933b91', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa2bf9104f0>]}
+[0m20:54:53.945297 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '00f49ee6-8c1e-4781-93b4-296160933b91', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa2f75fbee0>]}
+[0m20:54:53.946229 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m20:54:54.154776 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m20:54:54.155541 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m20:54:54.156033 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '00f49ee6-8c1e-4781-93b4-296160933b91', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa2bfadfeb0>]}
+[0m20:54:56.145584 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '00f49ee6-8c1e-4781-93b4-296160933b91', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa2bd1b42e0>]}
+[0m20:54:56.261034 [debug] [MainThread]: Wrote artifact WritableManifest to /home/peterlim/user_story/stock_analysis/target/manifest.json
+[0m20:54:56.263040 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/peterlim/user_story/stock_analysis/target/semantic_manifest.json
+[0m20:54:56.295913 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '00f49ee6-8c1e-4781-93b4-296160933b91', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa2bd1823e0>]}
+[0m20:54:56.296768 [info ] [MainThread]: Found 3 models, 29 data tests, 4 sources, 491 macros
+[0m20:54:56.297479 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '00f49ee6-8c1e-4781-93b4-296160933b91', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa2bd182650>]}
+[0m20:54:56.300180 [info ] [MainThread]: 
+[0m20:54:56.300680 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m20:54:56.301091 [info ] [MainThread]: 
+[0m20:54:56.301752 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m20:54:56.306914 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_dsai-project-462603'
+[0m20:54:56.308532 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:55:00.453094 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dsai-project-462603, now list_dsai-project-462603_stock_analysis)
+[0m20:55:00.453863 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m20:55:00.866087 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '00f49ee6-8c1e-4781-93b4-296160933b91', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa2f9f36e00>]}
+[0m20:55:00.867160 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:55:00.873523 [debug] [Thread-1 (]: Began running node model.stock_analysis.dim_date
+[0m20:55:00.875212 [info ] [Thread-1 (]: 1 of 3 START sql table model stock_analysis.dim_date ........................... [RUN]
+[0m20:55:00.875970 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dsai-project-462603_stock_analysis, now model.stock_analysis.dim_date)
+[0m20:55:00.876538 [debug] [Thread-1 (]: Began compiling node model.stock_analysis.dim_date
+[0m20:55:00.892695 [debug] [Thread-1 (]: Writing injected SQL for node "model.stock_analysis.dim_date"
+[0m20:55:00.901073 [debug] [Thread-1 (]: Began executing node model.stock_analysis.dim_date
+[0m20:55:00.922955 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:01.321221 [debug] [Thread-1 (]: Writing runtime sql for node "model.stock_analysis.dim_date"
+[0m20:55:01.323303 [debug] [Thread-1 (]: On model.stock_analysis.dim_date: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "model.stock_analysis.dim_date"} */
+
+  
+    
+
+    create or replace table `dsai-project-462603`.`stock_analysis`.`dim_date`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+WITH deduplicated_dates AS (
+    SELECT DISTINCT date
+    FROM `dsai-project-462603`.`stock_analysis`.`combined_tickers`
+)
+SELECT
+    DATE(date) AS date,
+    EXTRACT(YEAR FROM date) AS year,
+    EXTRACT(MONTH FROM date) AS month,
+    EXTRACT(DAY FROM date) AS day,
+    EXTRACT(QUARTER FROM date) AS quarter,
+    FORMAT_TIMESTAMP('%A', date) AS day_of_week
+FROM 
+    deduplicated_dates
+    );
+  
+[0m20:55:01.955314 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:89b50244-f79f-4470-aca5-dc5bf0ea16e5&page=queryresults
+[0m20:55:04.700510 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '00f49ee6-8c1e-4781-93b4-296160933b91', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa2f76386d0>]}
+[0m20:55:04.701947 [info ] [Thread-1 (]: 1 of 3 OK created sql table model stock_analysis.dim_date ...................... [[32mCREATE TABLE (1.5k rows, 176.8 KiB processed)[0m in 3.82s]
+[0m20:55:04.703085 [debug] [Thread-1 (]: Finished running node model.stock_analysis.dim_date
+[0m20:55:04.703696 [debug] [Thread-1 (]: Began running node model.stock_analysis.dim_info
+[0m20:55:04.705478 [info ] [Thread-1 (]: 2 of 3 START sql table model stock_analysis.dim_info ........................... [RUN]
+[0m20:55:04.706549 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.stock_analysis.dim_date, now model.stock_analysis.dim_info)
+[0m20:55:04.707067 [debug] [Thread-1 (]: Began compiling node model.stock_analysis.dim_info
+[0m20:55:04.711551 [debug] [Thread-1 (]: Writing injected SQL for node "model.stock_analysis.dim_info"
+[0m20:55:04.712489 [debug] [Thread-1 (]: Began executing node model.stock_analysis.dim_info
+[0m20:55:04.715380 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:05.075076 [debug] [Thread-1 (]: Writing runtime sql for node "model.stock_analysis.dim_info"
+[0m20:55:05.076047 [debug] [Thread-1 (]: On model.stock_analysis.dim_info: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "model.stock_analysis.dim_info"} */
+
+  
+    
+
+    create or replace table `dsai-project-462603`.`stock_analysis`.`dim_info`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+SELECT
+  ticker_symbol,
+  company_description,
+  company_name,
+  country,
+  industry,
+  sector
+FROM `dsai-project-462603`.`stock_analysis`.`stock_info`
+    );
+  
+[0m20:55:05.708638 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:66c82bcb-4ce0-4f6e-b85b-25d445051411&page=queryresults
+[0m20:55:09.199393 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '00f49ee6-8c1e-4781-93b4-296160933b91', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa2bc75e680>]}
+[0m20:55:09.200320 [info ] [Thread-1 (]: 2 of 3 OK created sql table model stock_analysis.dim_info ...................... [[32mCREATE TABLE (15.0 rows, 11.9 KiB processed)[0m in 4.49s]
+[0m20:55:09.201103 [debug] [Thread-1 (]: Finished running node model.stock_analysis.dim_info
+[0m20:55:09.201922 [debug] [Thread-1 (]: Began running node model.stock_analysis.fact_security
+[0m20:55:09.202807 [info ] [Thread-1 (]: 3 of 3 START sql table model stock_analysis.fact_security ...................... [RUN]
+[0m20:55:09.203791 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.stock_analysis.dim_info, now model.stock_analysis.fact_security)
+[0m20:55:09.204500 [debug] [Thread-1 (]: Began compiling node model.stock_analysis.fact_security
+[0m20:55:09.212473 [debug] [Thread-1 (]: Writing injected SQL for node "model.stock_analysis.fact_security"
+[0m20:55:09.216237 [debug] [Thread-1 (]: Began executing node model.stock_analysis.fact_security
+[0m20:55:09.222975 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:09.614510 [debug] [Thread-1 (]: Writing runtime sql for node "model.stock_analysis.fact_security"
+[0m20:55:09.615712 [debug] [Thread-1 (]: On model.stock_analysis.fact_security: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "model.stock_analysis.fact_security"} */
+
+  
+    
+
+    create or replace table `dsai-project-462603`.`stock_analysis`.`fact_security`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+WITH dup_data AS (
+SELECT
+  t.ticker_symbol,
+  DATE(t.date) AS date,
+  t.close_price,
+  t.high_price,
+  t.low_price,
+  t.open_price,
+  t.stock_splits,
+  t.dividend,
+  t.volume_traded,
+  f.GDP_growth_rate,
+  f.UMCSENT,
+  f.inflation_rate,
+  f.interest_rate,
+  f.unemployment_rate,
+  f.industrial_production,
+  f.ten_yr_treasury,
+  i.forward_eps,
+  i.forward_pe,
+  i.market_cap,
+  i.trailing_eps,
+  i.trailing_pe,
+  ta.ema_50,
+  ta.rsi_14,
+  ta.sma_50
+FROM `dsai-project-462603`.`stock_analysis`.`combined_tickers` t
+LEFT JOIN `dsai-project-462603`.`stock_analysis`.`fred` f
+  ON DATE(t.date) = DATE(f.date)
+LEFT JOIN `dsai-project-462603`.`stock_analysis`.`stock_info` i
+  ON t.ticker_symbol = i.ticker_symbol AND DATE(t.date) BETWEEN '2025-04-01' AND '2025-06-30'
+LEFT JOIN `dsai-project-462603`.`stock_analysis`.`techincal_indicator` ta
+  ON DATE(t.date) = DATE(ta.date) and t.ticker_symbol = ta.ticker_symbol
+)
+SELECT 
+  ticker_symbol,
+  date,
+  ANY_VALUE(close_price) AS close_price,
+  ANY_VALUE(high_price) AS high_price,
+  ANY_VALUE(low_price) AS low_price,
+  ANY_VALUE(open_price) AS open_price,
+  ANY_VALUE(stock_splits) AS stock_splits,
+  ANY_VALUE(dividend) AS dividend,
+  ANY_VALUE(volume_traded) AS volume_traded,
+  ANY_VALUE(GDP_growth_rate) AS GDP_growth_rate,
+  ANY_VALUE(UMCSENT) AS UMCSENT,
+  ANY_VALUE(inflation_rate) AS inflation_rate,
+  ANY_VALUE(interest_rate) AS interest_rate,
+  ANY_VALUE(unemployment_rate) AS unemployment_rate,
+  ANY_VALUE(ten_yr_treasury) AS ten_yr_treasury,
+  ANY_VALUE(industrial_production) AS industrial_production,
+  ANY_VALUE(forward_eps) AS forward_eps,
+  ANY_VALUE(forward_pe) AS forward_pe,
+  ANY_VALUE(market_cap) AS market_cap,
+  ANY_VALUE(trailing_eps) AS trailing_eps,
+  ANY_VALUE(trailing_pe) AS trailing_pe,
+  ANY_VALUE(ema_50) AS ema_50,
+  ANY_VALUE(rsi_14) AS rsi_14,
+  ANY_VALUE(sma_50) AS sma_50
+FROM dup_data 
+GROUP BY ticker_symbol, date
+    );
+  
+[0m20:55:10.217373 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:1ed6751b-3472-42b2-8b21-70fcc2d7425e&page=queryresults
+[0m20:55:13.089179 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '00f49ee6-8c1e-4781-93b4-296160933b91', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa2f76386d0>]}
+[0m20:55:13.091679 [info ] [Thread-1 (]: 3 of 3 OK created sql table model stock_analysis.fact_security ................. [[32mCREATE TABLE (22.6k rows, 1.9 MiB processed)[0m in 3.88s]
+[0m20:55:13.093081 [debug] [Thread-1 (]: Finished running node model.stock_analysis.fact_security
+[0m20:55:13.099725 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m20:55:13.101437 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:55:13.102171 [debug] [MainThread]: Connection 'model.stock_analysis.fact_security' was properly closed.
+[0m20:55:13.102995 [info ] [MainThread]: 
+[0m20:55:13.103701 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 16.80 seconds (16.80s).
+[0m20:55:13.105691 [debug] [MainThread]: Command end result
+[0m20:55:13.159267 [debug] [MainThread]: Wrote artifact WritableManifest to /home/peterlim/user_story/stock_analysis/target/manifest.json
+[0m20:55:13.163201 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/peterlim/user_story/stock_analysis/target/semantic_manifest.json
+[0m20:55:13.170438 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/peterlim/user_story/stock_analysis/target/run_results.json
+[0m20:55:13.170877 [info ] [MainThread]: 
+[0m20:55:13.171408 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m20:55:13.171935 [info ] [MainThread]: 
+[0m20:55:13.172456 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m20:55:13.175094 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 21.06915, "process_in_blocks": "46944", "process_kernel_time": 1.953389, "process_mem_max_rss": "276260", "process_out_blocks": "3576", "process_user_time": 5.880306}
+[0m20:55:13.176401 [debug] [MainThread]: Command `dbt run` succeeded at 20:55:13.176161 after 21.07 seconds
+[0m20:55:13.177064 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa2f86aad10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa2bf9104f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fa2bd1b11e0>]}
+[0m20:55:13.178023 [debug] [MainThread]: Flushing usage events
+[0m20:55:14.258049 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:55:27.792491 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f951ebb2d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f951db364a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f951db36440>]}
+
+
+============================== 20:55:27.796587 | 00f72798-bee0-48c8-867d-e768a3b0f0e7 ==============================
+[0m20:55:27.796587 [info ] [MainThread]: Running with dbt=1.9.2
+[0m20:55:27.797466 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/home/peterlim/user_story/stock_analysis', 'log_path': '/home/peterlim/user_story/stock_analysis/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt test', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m20:55:29.099995 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '00f72798-bee0-48c8-867d-e768a3b0f0e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f952049ae90>]}
+[0m20:55:29.209269 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '00f72798-bee0-48c8-867d-e768a3b0f0e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f951e18c6d0>]}
+[0m20:55:29.210565 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m20:55:29.407949 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m20:55:29.583818 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m20:55:29.584397 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m20:55:29.749190 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '00f72798-bee0-48c8-867d-e768a3b0f0e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f94e5d79180>]}
+[0m20:55:29.894828 [debug] [MainThread]: Wrote artifact WritableManifest to /home/peterlim/user_story/stock_analysis/target/manifest.json
+[0m20:55:29.898827 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/peterlim/user_story/stock_analysis/target/semantic_manifest.json
+[0m20:55:29.931022 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '00f72798-bee0-48c8-867d-e768a3b0f0e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f94e5c8bcd0>]}
+[0m20:55:29.931741 [info ] [MainThread]: Found 3 models, 29 data tests, 4 sources, 491 macros
+[0m20:55:29.932208 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '00f72798-bee0-48c8-867d-e768a3b0f0e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f94e653fee0>]}
+[0m20:55:29.936505 [info ] [MainThread]: 
+[0m20:55:29.937503 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m20:55:29.938098 [info ] [MainThread]: 
+[0m20:55:29.938993 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m20:55:29.947370 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_dsai-project-462603_stock_analysis'
+[0m20:55:29.948499 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:55:31.861736 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '00f72798-bee0-48c8-867d-e768a3b0f0e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f952043ee00>]}
+[0m20:55:31.863605 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:55:31.873168 [debug] [Thread-1 (]: Began running node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_date_date__date.3e342b7762
+[0m20:55:31.874260 [info ] [Thread-1 (]: 1 of 29 START test dbt_expectations_expect_column_values_to_be_of_type_dim_date_date__date  [RUN]
+[0m20:55:31.875460 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dsai-project-462603_stock_analysis, now test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_date_date__date.3e342b7762)
+[0m20:55:31.876376 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_date_date__date.3e342b7762
+[0m20:55:31.918425 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:31.936308 [debug] [Thread-1 (]: Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_date_date__date (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:55:31.938335 [error] [Thread-1 (]: 1 of 29 ERROR dbt_expectations_expect_column_values_to_be_of_type_dim_date_date__date  [[31mERROR[0m in 0.06s]
+[0m20:55:31.939968 [debug] [Thread-1 (]: Finished running node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_date_date__date.3e342b7762
+[0m20:55:31.941171 [debug] [Thread-1 (]: Began running node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_description__string.2e904d13e7
+[0m20:55:31.942748 [debug] [Thread-4 (]: Marking all children of 'test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_date_date__date.3e342b7762' to be skipped because of status 'error'.  Reason: Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_date_date__date (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps"..
+[0m20:55:31.944189 [info ] [Thread-1 (]: 2 of 29 START test dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_description__string  [RUN]
+[0m20:55:31.948565 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_date_date__date.3e342b7762, now test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_description__string.2e904d13e7)
+[0m20:55:31.950113 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_description__string.2e904d13e7
+[0m20:55:31.976332 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:31.981901 [debug] [Thread-1 (]: Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_description__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:55:31.985033 [error] [Thread-1 (]: 2 of 29 ERROR dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_description__string  [[31mERROR[0m in 0.04s]
+[0m20:55:31.989284 [debug] [Thread-1 (]: Finished running node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_description__string.2e904d13e7
+[0m20:55:31.997312 [debug] [Thread-1 (]: Began running node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_name__string.2df5a03834
+[0m20:55:31.999269 [debug] [Thread-4 (]: Marking all children of 'test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_description__string.2e904d13e7' to be skipped because of status 'error'.  Reason: Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_description__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps"..
+[0m20:55:32.001853 [info ] [Thread-1 (]: 3 of 29 START test dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_name__string  [RUN]
+[0m20:55:32.005470 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_description__string.2e904d13e7, now test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_name__string.2df5a03834)
+[0m20:55:32.008037 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_name__string.2df5a03834
+[0m20:55:32.039634 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:32.044273 [debug] [Thread-1 (]: Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_name__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:55:32.047103 [error] [Thread-1 (]: 3 of 29 ERROR dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_name__string  [[31mERROR[0m in 0.04s]
+[0m20:55:32.049449 [debug] [Thread-1 (]: Finished running node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_name__string.2df5a03834
+[0m20:55:32.051170 [debug] [Thread-1 (]: Began running node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_country__string.d3a9d9bc0e
+[0m20:55:32.053133 [debug] [Thread-4 (]: Marking all children of 'test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_name__string.2df5a03834' to be skipped because of status 'error'.  Reason: Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_name__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps"..
+[0m20:55:32.054746 [info ] [Thread-1 (]: 4 of 29 START test dbt_expectations_expect_column_values_to_be_of_type_dim_info_country__string  [RUN]
+[0m20:55:32.059233 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_name__string.2df5a03834, now test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_country__string.d3a9d9bc0e)
+[0m20:55:32.061154 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_country__string.d3a9d9bc0e
+[0m20:55:32.084435 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:32.090186 [debug] [Thread-1 (]: Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_info_country__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:55:32.092995 [error] [Thread-1 (]: 4 of 29 ERROR dbt_expectations_expect_column_values_to_be_of_type_dim_info_country__string  [[31mERROR[0m in 0.03s]
+[0m20:55:32.097136 [debug] [Thread-1 (]: Finished running node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_country__string.d3a9d9bc0e
+[0m20:55:32.100534 [debug] [Thread-1 (]: Began running node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_industry__string.09eb0f8323
+[0m20:55:32.104251 [debug] [Thread-4 (]: Marking all children of 'test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_country__string.d3a9d9bc0e' to be skipped because of status 'error'.  Reason: Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_info_country__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps"..
+[0m20:55:32.106571 [info ] [Thread-1 (]: 5 of 29 START test dbt_expectations_expect_column_values_to_be_of_type_dim_info_industry__string  [RUN]
+[0m20:55:32.110934 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_country__string.d3a9d9bc0e, now test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_industry__string.09eb0f8323)
+[0m20:55:32.113836 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_industry__string.09eb0f8323
+[0m20:55:32.137403 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:32.145052 [debug] [Thread-1 (]: Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_info_industry__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:55:32.148409 [error] [Thread-1 (]: 5 of 29 ERROR dbt_expectations_expect_column_values_to_be_of_type_dim_info_industry__string  [[31mERROR[0m in 0.04s]
+[0m20:55:32.152217 [debug] [Thread-1 (]: Finished running node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_industry__string.09eb0f8323
+[0m20:55:32.154449 [debug] [Thread-1 (]: Began running node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_sector__string.a5b417cd50
+[0m20:55:32.155993 [debug] [Thread-4 (]: Marking all children of 'test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_industry__string.09eb0f8323' to be skipped because of status 'error'.  Reason: Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_info_industry__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps"..
+[0m20:55:32.157286 [info ] [Thread-1 (]: 6 of 29 START test dbt_expectations_expect_column_values_to_be_of_type_dim_info_sector__string  [RUN]
+[0m20:55:32.160599 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_industry__string.09eb0f8323, now test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_sector__string.a5b417cd50)
+[0m20:55:32.161919 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_sector__string.a5b417cd50
+[0m20:55:32.176030 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:32.181960 [debug] [Thread-1 (]: Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_info_sector__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:55:32.185525 [error] [Thread-1 (]: 6 of 29 ERROR dbt_expectations_expect_column_values_to_be_of_type_dim_info_sector__string  [[31mERROR[0m in 0.02s]
+[0m20:55:32.188941 [debug] [Thread-1 (]: Finished running node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_sector__string.a5b417cd50
+[0m20:55:32.191785 [debug] [Thread-1 (]: Began running node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_ticker_symbol__string.181d649e38
+[0m20:55:32.195916 [debug] [Thread-4 (]: Marking all children of 'test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_sector__string.a5b417cd50' to be skipped because of status 'error'.  Reason: Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_info_sector__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps"..
+[0m20:55:32.199859 [info ] [Thread-1 (]: 7 of 29 START test dbt_expectations_expect_column_values_to_be_of_type_dim_info_ticker_symbol__string  [RUN]
+[0m20:55:32.203799 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_sector__string.a5b417cd50, now test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_ticker_symbol__string.181d649e38)
+[0m20:55:32.205275 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_ticker_symbol__string.181d649e38
+[0m20:55:32.230179 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:32.238435 [debug] [Thread-1 (]: Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_info_ticker_symbol__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:55:32.242935 [error] [Thread-1 (]: 7 of 29 ERROR dbt_expectations_expect_column_values_to_be_of_type_dim_info_ticker_symbol__string  [[31mERROR[0m in 0.04s]
+[0m20:55:32.246286 [debug] [Thread-1 (]: Finished running node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_ticker_symbol__string.181d649e38
+[0m20:55:32.248885 [debug] [Thread-1 (]: Began running node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_fact_security_date__date.b3a187ffd7
+[0m20:55:32.251311 [debug] [Thread-4 (]: Marking all children of 'test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_ticker_symbol__string.181d649e38' to be skipped because of status 'error'.  Reason: Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_info_ticker_symbol__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps"..
+[0m20:55:32.253698 [info ] [Thread-1 (]: 8 of 29 START test dbt_expectations_expect_column_values_to_be_of_type_fact_security_date__date  [RUN]
+[0m20:55:32.258477 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_dim_info_ticker_symbol__string.181d649e38, now test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_fact_security_date__date.b3a187ffd7)
+[0m20:55:32.260814 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_fact_security_date__date.b3a187ffd7
+[0m20:55:32.285439 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:32.289431 [debug] [Thread-1 (]: Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_fact_security_date__date (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:55:32.291588 [error] [Thread-1 (]: 8 of 29 ERROR dbt_expectations_expect_column_values_to_be_of_type_fact_security_date__date  [[31mERROR[0m in 0.03s]
+[0m20:55:32.294033 [debug] [Thread-1 (]: Finished running node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_fact_security_date__date.b3a187ffd7
+[0m20:55:32.295985 [debug] [Thread-1 (]: Began running node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_fact_security_ticker_symbol__string.10e14d8854
+[0m20:55:32.301128 [debug] [Thread-4 (]: Marking all children of 'test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_fact_security_date__date.b3a187ffd7' to be skipped because of status 'error'.  Reason: Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_fact_security_date__date (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps"..
+[0m20:55:32.299119 [info ] [Thread-1 (]: 9 of 29 START test dbt_expectations_expect_column_values_to_be_of_type_fact_security_ticker_symbol__string  [RUN]
+[0m20:55:32.306819 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_fact_security_date__date.b3a187ffd7, now test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_fact_security_ticker_symbol__string.10e14d8854)
+[0m20:55:32.309501 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_fact_security_ticker_symbol__string.10e14d8854
+[0m20:55:32.330768 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:32.334776 [debug] [Thread-1 (]: Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_fact_security_ticker_symbol__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:55:32.337285 [error] [Thread-1 (]: 9 of 29 ERROR dbt_expectations_expect_column_values_to_be_of_type_fact_security_ticker_symbol__string  [[31mERROR[0m in 0.03s]
+[0m20:55:32.340444 [debug] [Thread-1 (]: Finished running node test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_fact_security_ticker_symbol__string.10e14d8854
+[0m20:55:32.342137 [debug] [Thread-1 (]: Began running node test.stock_analysis.dbt_expectations_expect_compound_columns_to_be_unique_fact_security_ticker_symbol__date.3d581a7b20
+[0m20:55:32.344944 [debug] [Thread-4 (]: Marking all children of 'test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_fact_security_ticker_symbol__string.10e14d8854' to be skipped because of status 'error'.  Reason: Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_fact_security_ticker_symbol__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps"..
+[0m20:55:32.346597 [info ] [Thread-1 (]: 10 of 29 START test dbt_expectations_expect_compound_columns_to_be_unique_fact_security_ticker_symbol__date  [RUN]
+[0m20:55:32.349696 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.dbt_expectations_expect_column_values_to_be_of_type_fact_security_ticker_symbol__string.10e14d8854, now test.stock_analysis.dbt_expectations_expect_compound_columns_to_be_unique_fact_security_ticker_symbol__date.3d581a7b20)
+[0m20:55:32.351378 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.dbt_expectations_expect_compound_columns_to_be_unique_fact_security_ticker_symbol__date.3d581a7b20
+[0m20:55:32.377764 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:32.386590 [debug] [Thread-1 (]: Compilation Error in test dbt_expectations_expect_compound_columns_to_be_unique_fact_security_ticker_symbol__date (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:55:32.389539 [error] [Thread-1 (]: 10 of 29 ERROR dbt_expectations_expect_compound_columns_to_be_unique_fact_security_ticker_symbol__date  [[31mERROR[0m in 0.04s]
+[0m20:55:32.392351 [debug] [Thread-1 (]: Finished running node test.stock_analysis.dbt_expectations_expect_compound_columns_to_be_unique_fact_security_ticker_symbol__date.3d581a7b20
+[0m20:55:32.394612 [debug] [Thread-1 (]: Began running node test.stock_analysis.dbt_utils_accepted_range_dim_date_date__CURRENT_DATE_.4c0002697f
+[0m20:55:32.398140 [debug] [Thread-4 (]: Marking all children of 'test.stock_analysis.dbt_expectations_expect_compound_columns_to_be_unique_fact_security_ticker_symbol__date.3d581a7b20' to be skipped because of status 'error'.  Reason: Compilation Error in test dbt_expectations_expect_compound_columns_to_be_unique_fact_security_ticker_symbol__date (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps"..
+[0m20:55:32.400851 [info ] [Thread-1 (]: 11 of 29 START test dbt_utils_accepted_range_dim_date_date__CURRENT_DATE_ ...... [RUN]
+[0m20:55:32.405835 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.dbt_expectations_expect_compound_columns_to_be_unique_fact_security_ticker_symbol__date.3d581a7b20, now test.stock_analysis.dbt_utils_accepted_range_dim_date_date__CURRENT_DATE_.4c0002697f)
+[0m20:55:32.409219 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.dbt_utils_accepted_range_dim_date_date__CURRENT_DATE_.4c0002697f
+[0m20:55:32.438626 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:32.443645 [debug] [Thread-1 (]: Compilation Error in test dbt_utils_accepted_range_dim_date_date__CURRENT_DATE_ (models/schema.yml)
+  'dbt_utils' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:55:32.453848 [error] [Thread-1 (]: 11 of 29 ERROR dbt_utils_accepted_range_dim_date_date__CURRENT_DATE_ ........... [[31mERROR[0m in 0.04s]
+[0m20:55:32.456901 [debug] [Thread-1 (]: Finished running node test.stock_analysis.dbt_utils_accepted_range_dim_date_date__CURRENT_DATE_.4c0002697f
+[0m20:55:32.460622 [debug] [Thread-1 (]: Began running node test.stock_analysis.dbt_utils_accepted_range_fact_security_date__CURRENT_DATE_.5160189aae
+[0m20:55:32.465869 [debug] [Thread-4 (]: Marking all children of 'test.stock_analysis.dbt_utils_accepted_range_dim_date_date__CURRENT_DATE_.4c0002697f' to be skipped because of status 'error'.  Reason: Compilation Error in test dbt_utils_accepted_range_dim_date_date__CURRENT_DATE_ (models/schema.yml)
+  'dbt_utils' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps"..
+[0m20:55:32.463258 [info ] [Thread-1 (]: 12 of 29 START test dbt_utils_accepted_range_fact_security_date__CURRENT_DATE_ . [RUN]
+[0m20:55:32.470895 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.dbt_utils_accepted_range_dim_date_date__CURRENT_DATE_.4c0002697f, now test.stock_analysis.dbt_utils_accepted_range_fact_security_date__CURRENT_DATE_.5160189aae)
+[0m20:55:32.473611 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.dbt_utils_accepted_range_fact_security_date__CURRENT_DATE_.5160189aae
+[0m20:55:32.492765 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:32.496757 [debug] [Thread-1 (]: Compilation Error in test dbt_utils_accepted_range_fact_security_date__CURRENT_DATE_ (models/schema.yml)
+  'dbt_utils' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:55:32.498561 [error] [Thread-1 (]: 12 of 29 ERROR dbt_utils_accepted_range_fact_security_date__CURRENT_DATE_ ...... [[31mERROR[0m in 0.03s]
+[0m20:55:32.500133 [debug] [Thread-1 (]: Finished running node test.stock_analysis.dbt_utils_accepted_range_fact_security_date__CURRENT_DATE_.5160189aae
+[0m20:55:32.501265 [debug] [Thread-1 (]: Began running node test.stock_analysis.not_null_dim_date_date.78f11e7735
+[0m20:55:32.502568 [debug] [Thread-4 (]: Marking all children of 'test.stock_analysis.dbt_utils_accepted_range_fact_security_date__CURRENT_DATE_.5160189aae' to be skipped because of status 'error'.  Reason: Compilation Error in test dbt_utils_accepted_range_fact_security_date__CURRENT_DATE_ (models/schema.yml)
+  'dbt_utils' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps"..
+[0m20:55:32.505190 [info ] [Thread-1 (]: 13 of 29 START test not_null_dim_date_date ..................................... [RUN]
+[0m20:55:32.508357 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.dbt_utils_accepted_range_fact_security_date__CURRENT_DATE_.5160189aae, now test.stock_analysis.not_null_dim_date_date.78f11e7735)
+[0m20:55:32.510280 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.not_null_dim_date_date.78f11e7735
+[0m20:55:32.547110 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_analysis.not_null_dim_date_date.78f11e7735"
+[0m20:55:32.551346 [debug] [Thread-1 (]: Began executing node test.stock_analysis.not_null_dim_date_date.78f11e7735
+[0m20:55:32.610010 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_analysis.not_null_dim_date_date.78f11e7735"
+[0m20:55:32.611879 [debug] [Thread-1 (]: On test.stock_analysis.not_null_dim_date_date.78f11e7735: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "test.stock_analysis.not_null_dim_date_date.78f11e7735"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select date
+from `dsai-project-462603`.`stock_analysis`.`dim_date`
+where date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:55:32.612704 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:33.417615 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:72068081-ee2c-466d-b2d0-5e9076130303&page=queryresults
+[0m20:55:34.485938 [info ] [Thread-1 (]: 13 of 29 PASS not_null_dim_date_date ........................................... [[32mPASS[0m in 1.98s]
+[0m20:55:34.487318 [debug] [Thread-1 (]: Finished running node test.stock_analysis.not_null_dim_date_date.78f11e7735
+[0m20:55:34.488065 [debug] [Thread-1 (]: Began running node test.stock_analysis.not_null_dim_info_company_description.31c8e4c81f
+[0m20:55:34.489197 [info ] [Thread-1 (]: 14 of 29 START test not_null_dim_info_company_description ...................... [RUN]
+[0m20:55:34.490022 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.not_null_dim_date_date.78f11e7735, now test.stock_analysis.not_null_dim_info_company_description.31c8e4c81f)
+[0m20:55:34.490494 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.not_null_dim_info_company_description.31c8e4c81f
+[0m20:55:34.495701 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_analysis.not_null_dim_info_company_description.31c8e4c81f"
+[0m20:55:34.497247 [debug] [Thread-1 (]: Began executing node test.stock_analysis.not_null_dim_info_company_description.31c8e4c81f
+[0m20:55:34.502992 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_analysis.not_null_dim_info_company_description.31c8e4c81f"
+[0m20:55:34.504649 [debug] [Thread-1 (]: On test.stock_analysis.not_null_dim_info_company_description.31c8e4c81f: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "test.stock_analysis.not_null_dim_info_company_description.31c8e4c81f"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select company_description
+from `dsai-project-462603`.`stock_analysis`.`dim_info`
+where company_description is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:55:34.505334 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:35.186584 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:8bb2e764-0e1e-46f6-826f-7ddc48a4473a&page=queryresults
+[0m20:55:36.189514 [info ] [Thread-1 (]: 14 of 29 PASS not_null_dim_info_company_description ............................ [[32mPASS[0m in 1.70s]
+[0m20:55:36.190631 [debug] [Thread-1 (]: Finished running node test.stock_analysis.not_null_dim_info_company_description.31c8e4c81f
+[0m20:55:36.191422 [debug] [Thread-1 (]: Began running node test.stock_analysis.not_null_dim_info_company_name.0812575c54
+[0m20:55:36.193102 [info ] [Thread-1 (]: 15 of 29 START test not_null_dim_info_company_name ............................. [RUN]
+[0m20:55:36.194126 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.not_null_dim_info_company_description.31c8e4c81f, now test.stock_analysis.not_null_dim_info_company_name.0812575c54)
+[0m20:55:36.194655 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.not_null_dim_info_company_name.0812575c54
+[0m20:55:36.201520 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_analysis.not_null_dim_info_company_name.0812575c54"
+[0m20:55:36.203046 [debug] [Thread-1 (]: Began executing node test.stock_analysis.not_null_dim_info_company_name.0812575c54
+[0m20:55:36.208356 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_analysis.not_null_dim_info_company_name.0812575c54"
+[0m20:55:36.209460 [debug] [Thread-1 (]: On test.stock_analysis.not_null_dim_info_company_name.0812575c54: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "test.stock_analysis.not_null_dim_info_company_name.0812575c54"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select company_name
+from `dsai-project-462603`.`stock_analysis`.`dim_info`
+where company_name is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:55:36.210101 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:36.892716 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:4153feb0-6b9f-4987-a24c-9a5228b43777&page=queryresults
+[0m20:55:37.917268 [info ] [Thread-1 (]: 15 of 29 PASS not_null_dim_info_company_name ................................... [[32mPASS[0m in 1.72s]
+[0m20:55:37.918286 [debug] [Thread-1 (]: Finished running node test.stock_analysis.not_null_dim_info_company_name.0812575c54
+[0m20:55:37.918936 [debug] [Thread-1 (]: Began running node test.stock_analysis.not_null_dim_info_ticker_symbol.7b5e2646ab
+[0m20:55:37.919932 [info ] [Thread-1 (]: 16 of 29 START test not_null_dim_info_ticker_symbol ............................ [RUN]
+[0m20:55:37.920952 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.not_null_dim_info_company_name.0812575c54, now test.stock_analysis.not_null_dim_info_ticker_symbol.7b5e2646ab)
+[0m20:55:37.921650 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.not_null_dim_info_ticker_symbol.7b5e2646ab
+[0m20:55:37.930597 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_analysis.not_null_dim_info_ticker_symbol.7b5e2646ab"
+[0m20:55:37.931863 [debug] [Thread-1 (]: Began executing node test.stock_analysis.not_null_dim_info_ticker_symbol.7b5e2646ab
+[0m20:55:37.935083 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_analysis.not_null_dim_info_ticker_symbol.7b5e2646ab"
+[0m20:55:37.937100 [debug] [Thread-1 (]: On test.stock_analysis.not_null_dim_info_ticker_symbol.7b5e2646ab: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "test.stock_analysis.not_null_dim_info_ticker_symbol.7b5e2646ab"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ticker_symbol
+from `dsai-project-462603`.`stock_analysis`.`dim_info`
+where ticker_symbol is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:55:37.938035 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:38.638510 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:74304776-e138-499b-a468-53e132fcc4fa&page=queryresults
+[0m20:55:39.650584 [info ] [Thread-1 (]: 16 of 29 PASS not_null_dim_info_ticker_symbol .................................. [[32mPASS[0m in 1.73s]
+[0m20:55:39.653362 [debug] [Thread-1 (]: Finished running node test.stock_analysis.not_null_dim_info_ticker_symbol.7b5e2646ab
+[0m20:55:39.654107 [debug] [Thread-1 (]: Began running node test.stock_analysis.not_null_fact_security_close_price.df4a944e5c
+[0m20:55:39.655312 [info ] [Thread-1 (]: 17 of 29 START test not_null_fact_security_close_price ......................... [RUN]
+[0m20:55:39.656224 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.not_null_dim_info_ticker_symbol.7b5e2646ab, now test.stock_analysis.not_null_fact_security_close_price.df4a944e5c)
+[0m20:55:39.657123 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.not_null_fact_security_close_price.df4a944e5c
+[0m20:55:39.669413 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_analysis.not_null_fact_security_close_price.df4a944e5c"
+[0m20:55:39.670517 [debug] [Thread-1 (]: Began executing node test.stock_analysis.not_null_fact_security_close_price.df4a944e5c
+[0m20:55:39.674022 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_analysis.not_null_fact_security_close_price.df4a944e5c"
+[0m20:55:39.675057 [debug] [Thread-1 (]: On test.stock_analysis.not_null_fact_security_close_price.df4a944e5c: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "test.stock_analysis.not_null_fact_security_close_price.df4a944e5c"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select close_price
+from `dsai-project-462603`.`stock_analysis`.`fact_security`
+where close_price is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:55:39.675721 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:40.353170 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:0a83eaae-ca2e-488c-8933-f342866819ac&page=queryresults
+[0m20:55:41.373171 [info ] [Thread-1 (]: 17 of 29 PASS not_null_fact_security_close_price ............................... [[32mPASS[0m in 1.72s]
+[0m20:55:41.374234 [debug] [Thread-1 (]: Finished running node test.stock_analysis.not_null_fact_security_close_price.df4a944e5c
+[0m20:55:41.375159 [debug] [Thread-1 (]: Began running node test.stock_analysis.not_null_fact_security_date.a5e8ef3347
+[0m20:55:41.375916 [info ] [Thread-1 (]: 18 of 29 START test not_null_fact_security_date ................................ [RUN]
+[0m20:55:41.377048 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.not_null_fact_security_close_price.df4a944e5c, now test.stock_analysis.not_null_fact_security_date.a5e8ef3347)
+[0m20:55:41.377973 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.not_null_fact_security_date.a5e8ef3347
+[0m20:55:41.388401 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_analysis.not_null_fact_security_date.a5e8ef3347"
+[0m20:55:41.389388 [debug] [Thread-1 (]: Began executing node test.stock_analysis.not_null_fact_security_date.a5e8ef3347
+[0m20:55:41.392420 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_analysis.not_null_fact_security_date.a5e8ef3347"
+[0m20:55:41.394708 [debug] [Thread-1 (]: On test.stock_analysis.not_null_fact_security_date.a5e8ef3347: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "test.stock_analysis.not_null_fact_security_date.a5e8ef3347"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select date
+from `dsai-project-462603`.`stock_analysis`.`fact_security`
+where date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:55:41.395283 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:42.092984 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:9ae7bcc8-e065-406a-8e2b-83bc323c1ee7&page=queryresults
+[0m20:55:43.137758 [info ] [Thread-1 (]: 18 of 29 PASS not_null_fact_security_date ...................................... [[32mPASS[0m in 1.76s]
+[0m20:55:43.139026 [debug] [Thread-1 (]: Finished running node test.stock_analysis.not_null_fact_security_date.a5e8ef3347
+[0m20:55:43.139904 [debug] [Thread-1 (]: Began running node test.stock_analysis.not_null_fact_security_high_price.1fc0b434f6
+[0m20:55:43.140893 [info ] [Thread-1 (]: 19 of 29 START test not_null_fact_security_high_price .......................... [RUN]
+[0m20:55:43.142069 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.not_null_fact_security_date.a5e8ef3347, now test.stock_analysis.not_null_fact_security_high_price.1fc0b434f6)
+[0m20:55:43.142562 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.not_null_fact_security_high_price.1fc0b434f6
+[0m20:55:43.149453 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_analysis.not_null_fact_security_high_price.1fc0b434f6"
+[0m20:55:43.150214 [debug] [Thread-1 (]: Began executing node test.stock_analysis.not_null_fact_security_high_price.1fc0b434f6
+[0m20:55:43.154769 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_analysis.not_null_fact_security_high_price.1fc0b434f6"
+[0m20:55:43.157698 [debug] [Thread-1 (]: On test.stock_analysis.not_null_fact_security_high_price.1fc0b434f6: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "test.stock_analysis.not_null_fact_security_high_price.1fc0b434f6"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select high_price
+from `dsai-project-462603`.`stock_analysis`.`fact_security`
+where high_price is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:55:43.160481 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:43.833993 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:62b1e750-9063-4168-80c3-5a4ca69861a8&page=queryresults
+[0m20:55:44.922593 [info ] [Thread-1 (]: 19 of 29 PASS not_null_fact_security_high_price ................................ [[32mPASS[0m in 1.78s]
+[0m20:55:44.923658 [debug] [Thread-1 (]: Finished running node test.stock_analysis.not_null_fact_security_high_price.1fc0b434f6
+[0m20:55:44.924533 [debug] [Thread-1 (]: Began running node test.stock_analysis.not_null_fact_security_low_price.e398ec4c75
+[0m20:55:44.925605 [info ] [Thread-1 (]: 20 of 29 START test not_null_fact_security_low_price ........................... [RUN]
+[0m20:55:44.926734 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.not_null_fact_security_high_price.1fc0b434f6, now test.stock_analysis.not_null_fact_security_low_price.e398ec4c75)
+[0m20:55:44.927535 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.not_null_fact_security_low_price.e398ec4c75
+[0m20:55:44.934383 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_analysis.not_null_fact_security_low_price.e398ec4c75"
+[0m20:55:44.940628 [debug] [Thread-1 (]: Began executing node test.stock_analysis.not_null_fact_security_low_price.e398ec4c75
+[0m20:55:44.945630 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_analysis.not_null_fact_security_low_price.e398ec4c75"
+[0m20:55:44.948091 [debug] [Thread-1 (]: On test.stock_analysis.not_null_fact_security_low_price.e398ec4c75: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "test.stock_analysis.not_null_fact_security_low_price.e398ec4c75"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select low_price
+from `dsai-project-462603`.`stock_analysis`.`fact_security`
+where low_price is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:55:44.948834 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:45.596959 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:803f58d2-d1bc-4770-a3cd-4ac3f23867c5&page=queryresults
+[0m20:55:46.654966 [info ] [Thread-1 (]: 20 of 29 PASS not_null_fact_security_low_price ................................. [[32mPASS[0m in 1.73s]
+[0m20:55:46.656221 [debug] [Thread-1 (]: Finished running node test.stock_analysis.not_null_fact_security_low_price.e398ec4c75
+[0m20:55:46.657016 [debug] [Thread-1 (]: Began running node test.stock_analysis.not_null_fact_security_open_price.2af3f48d6c
+[0m20:55:46.658305 [info ] [Thread-1 (]: 21 of 29 START test not_null_fact_security_open_price .......................... [RUN]
+[0m20:55:46.659727 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.not_null_fact_security_low_price.e398ec4c75, now test.stock_analysis.not_null_fact_security_open_price.2af3f48d6c)
+[0m20:55:46.660302 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.not_null_fact_security_open_price.2af3f48d6c
+[0m20:55:46.677207 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_analysis.not_null_fact_security_open_price.2af3f48d6c"
+[0m20:55:46.684839 [debug] [Thread-1 (]: Began executing node test.stock_analysis.not_null_fact_security_open_price.2af3f48d6c
+[0m20:55:46.692606 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_analysis.not_null_fact_security_open_price.2af3f48d6c"
+[0m20:55:46.694368 [debug] [Thread-1 (]: On test.stock_analysis.not_null_fact_security_open_price.2af3f48d6c: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "test.stock_analysis.not_null_fact_security_open_price.2af3f48d6c"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select open_price
+from `dsai-project-462603`.`stock_analysis`.`fact_security`
+where open_price is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:55:46.695168 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:47.444771 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:ccdf9561-ff70-4d01-8429-371086994d79&page=queryresults
+[0m20:55:48.500529 [info ] [Thread-1 (]: 21 of 29 PASS not_null_fact_security_open_price ................................ [[32mPASS[0m in 1.84s]
+[0m20:55:48.503052 [debug] [Thread-1 (]: Finished running node test.stock_analysis.not_null_fact_security_open_price.2af3f48d6c
+[0m20:55:48.503939 [debug] [Thread-1 (]: Began running node test.stock_analysis.not_null_fact_security_ticker_symbol.995a4a707a
+[0m20:55:48.505825 [info ] [Thread-1 (]: 22 of 29 START test not_null_fact_security_ticker_symbol ....................... [RUN]
+[0m20:55:48.508681 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.not_null_fact_security_open_price.2af3f48d6c, now test.stock_analysis.not_null_fact_security_ticker_symbol.995a4a707a)
+[0m20:55:48.509907 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.not_null_fact_security_ticker_symbol.995a4a707a
+[0m20:55:48.523875 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_analysis.not_null_fact_security_ticker_symbol.995a4a707a"
+[0m20:55:48.527012 [debug] [Thread-1 (]: Began executing node test.stock_analysis.not_null_fact_security_ticker_symbol.995a4a707a
+[0m20:55:48.531146 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_analysis.not_null_fact_security_ticker_symbol.995a4a707a"
+[0m20:55:48.532805 [debug] [Thread-1 (]: On test.stock_analysis.not_null_fact_security_ticker_symbol.995a4a707a: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "test.stock_analysis.not_null_fact_security_ticker_symbol.995a4a707a"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select ticker_symbol
+from `dsai-project-462603`.`stock_analysis`.`fact_security`
+where ticker_symbol is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:55:48.533505 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:49.167944 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:c5bf4e49-3033-411c-994b-d967762ef2f0&page=queryresults
+[0m20:55:50.149984 [info ] [Thread-1 (]: 22 of 29 PASS not_null_fact_security_ticker_symbol ............................. [[32mPASS[0m in 1.64s]
+[0m20:55:50.151609 [debug] [Thread-1 (]: Finished running node test.stock_analysis.not_null_fact_security_ticker_symbol.995a4a707a
+[0m20:55:50.152613 [debug] [Thread-1 (]: Began running node test.stock_analysis.not_null_fact_security_volume_traded.e897076b58
+[0m20:55:50.154295 [info ] [Thread-1 (]: 23 of 29 START test not_null_fact_security_volume_traded ....................... [RUN]
+[0m20:55:50.156187 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.not_null_fact_security_ticker_symbol.995a4a707a, now test.stock_analysis.not_null_fact_security_volume_traded.e897076b58)
+[0m20:55:50.157806 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.not_null_fact_security_volume_traded.e897076b58
+[0m20:55:50.168953 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_analysis.not_null_fact_security_volume_traded.e897076b58"
+[0m20:55:50.169867 [debug] [Thread-1 (]: Began executing node test.stock_analysis.not_null_fact_security_volume_traded.e897076b58
+[0m20:55:50.175535 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_analysis.not_null_fact_security_volume_traded.e897076b58"
+[0m20:55:50.178203 [debug] [Thread-1 (]: On test.stock_analysis.not_null_fact_security_volume_traded.e897076b58: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "test.stock_analysis.not_null_fact_security_volume_traded.e897076b58"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select volume_traded
+from `dsai-project-462603`.`stock_analysis`.`fact_security`
+where volume_traded is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:55:50.179177 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:50.833491 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:4ac23715-7c49-46e9-b585-6b475cba51e1&page=queryresults
+[0m20:55:51.819244 [info ] [Thread-1 (]: 23 of 29 PASS not_null_fact_security_volume_traded ............................. [[32mPASS[0m in 1.66s]
+[0m20:55:51.820895 [debug] [Thread-1 (]: Finished running node test.stock_analysis.not_null_fact_security_volume_traded.e897076b58
+[0m20:55:51.821720 [debug] [Thread-1 (]: Began running node test.stock_analysis.relationships_fact_security_date__date__ref_dim_date_.94fedd43d3
+[0m20:55:51.822699 [info ] [Thread-1 (]: 24 of 29 START test relationships_fact_security_date__date__ref_dim_date_ ...... [RUN]
+[0m20:55:51.823408 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.not_null_fact_security_volume_traded.e897076b58, now test.stock_analysis.relationships_fact_security_date__date__ref_dim_date_.94fedd43d3)
+[0m20:55:51.824001 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.relationships_fact_security_date__date__ref_dim_date_.94fedd43d3
+[0m20:55:51.843531 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_analysis.relationships_fact_security_date__date__ref_dim_date_.94fedd43d3"
+[0m20:55:51.846768 [debug] [Thread-1 (]: Began executing node test.stock_analysis.relationships_fact_security_date__date__ref_dim_date_.94fedd43d3
+[0m20:55:51.850046 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_analysis.relationships_fact_security_date__date__ref_dim_date_.94fedd43d3"
+[0m20:55:51.851513 [debug] [Thread-1 (]: On test.stock_analysis.relationships_fact_security_date__date__ref_dim_date_.94fedd43d3: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "test.stock_analysis.relationships_fact_security_date__date__ref_dim_date_.94fedd43d3"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select date as from_field
+    from `dsai-project-462603`.`stock_analysis`.`fact_security`
+    where date is not null
+),
+
+parent as (
+    select date as to_field
+    from `dsai-project-462603`.`stock_analysis`.`dim_date`
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:55:51.852297 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:52.578123 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:7eff620b-5f88-49a5-819b-e98f46aa110f&page=queryresults
+[0m20:55:53.693717 [info ] [Thread-1 (]: 24 of 29 PASS relationships_fact_security_date__date__ref_dim_date_ ............ [[32mPASS[0m in 1.87s]
+[0m20:55:53.694906 [debug] [Thread-1 (]: Finished running node test.stock_analysis.relationships_fact_security_date__date__ref_dim_date_.94fedd43d3
+[0m20:55:53.695796 [debug] [Thread-1 (]: Began running node test.stock_analysis.relationships_fact_security_ticker_symbol__ticker_symbol__ref_dim_info_.5e1e509b79
+[0m20:55:53.696741 [info ] [Thread-1 (]: 25 of 29 START test relationships_fact_security_ticker_symbol__ticker_symbol__ref_dim_info_  [RUN]
+[0m20:55:53.698228 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.relationships_fact_security_date__date__ref_dim_date_.94fedd43d3, now test.stock_analysis.relationships_fact_security_ticker_symbol__ticker_symbol__ref_dim_info_.5e1e509b79)
+[0m20:55:53.699367 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.relationships_fact_security_ticker_symbol__ticker_symbol__ref_dim_info_.5e1e509b79
+[0m20:55:53.706343 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_analysis.relationships_fact_security_ticker_symbol__ticker_symbol__ref_dim_info_.5e1e509b79"
+[0m20:55:53.708760 [debug] [Thread-1 (]: Began executing node test.stock_analysis.relationships_fact_security_ticker_symbol__ticker_symbol__ref_dim_info_.5e1e509b79
+[0m20:55:53.711892 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_analysis.relationships_fact_security_ticker_symbol__ticker_symbol__ref_dim_info_.5e1e509b79"
+[0m20:55:53.713311 [debug] [Thread-1 (]: On test.stock_analysis.relationships_fact_security_ticker_symbol__ticker_symbol__ref_dim_info_.5e1e509b79: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "test.stock_analysis.relationships_fact_security_ticker_symbol__ticker_symbol__ref_dim_info_.5e1e509b79"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select ticker_symbol as from_field
+    from `dsai-project-462603`.`stock_analysis`.`fact_security`
+    where ticker_symbol is not null
+),
+
+parent as (
+    select ticker_symbol as to_field
+    from `dsai-project-462603`.`stock_analysis`.`dim_info`
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:55:53.714195 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:54.474395 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:71fedb7b-38a1-4718-94bd-0dc4c4adb3bc&page=queryresults
+[0m20:55:55.402505 [info ] [Thread-1 (]: 25 of 29 PASS relationships_fact_security_ticker_symbol__ticker_symbol__ref_dim_info_  [[32mPASS[0m in 1.70s]
+[0m20:55:55.403788 [debug] [Thread-1 (]: Finished running node test.stock_analysis.relationships_fact_security_ticker_symbol__ticker_symbol__ref_dim_info_.5e1e509b79
+[0m20:55:55.404591 [debug] [Thread-1 (]: Began running node test.stock_analysis.unique_dim_date_date.dd069a8d31
+[0m20:55:55.405830 [info ] [Thread-1 (]: 26 of 29 START test unique_dim_date_date ....................................... [RUN]
+[0m20:55:55.406800 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.relationships_fact_security_ticker_symbol__ticker_symbol__ref_dim_info_.5e1e509b79, now test.stock_analysis.unique_dim_date_date.dd069a8d31)
+[0m20:55:55.407481 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.unique_dim_date_date.dd069a8d31
+[0m20:55:55.418406 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_analysis.unique_dim_date_date.dd069a8d31"
+[0m20:55:55.419862 [debug] [Thread-1 (]: Began executing node test.stock_analysis.unique_dim_date_date.dd069a8d31
+[0m20:55:55.426221 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_analysis.unique_dim_date_date.dd069a8d31"
+[0m20:55:55.428396 [debug] [Thread-1 (]: On test.stock_analysis.unique_dim_date_date.dd069a8d31: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "test.stock_analysis.unique_dim_date_date.dd069a8d31"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with dbt_test__target as (
+
+  select date as unique_field
+  from `dsai-project-462603`.`stock_analysis`.`dim_date`
+  where date is not null
+
+)
+
+select
+    unique_field,
+    count(*) as n_records
+
+from dbt_test__target
+group by unique_field
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:55:55.429625 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:56.201562 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:3324f503-70b3-43ce-bcef-ad2b84af02b5&page=queryresults
+[0m20:55:57.132962 [info ] [Thread-1 (]: 26 of 29 PASS unique_dim_date_date ............................................. [[32mPASS[0m in 1.73s]
+[0m20:55:57.134364 [debug] [Thread-1 (]: Finished running node test.stock_analysis.unique_dim_date_date.dd069a8d31
+[0m20:55:57.135407 [debug] [Thread-1 (]: Began running node test.stock_analysis.unique_dim_info_company_description.20d37b14dd
+[0m20:55:57.136930 [info ] [Thread-1 (]: 27 of 29 START test unique_dim_info_company_description ........................ [RUN]
+[0m20:55:57.140149 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.unique_dim_date_date.dd069a8d31, now test.stock_analysis.unique_dim_info_company_description.20d37b14dd)
+[0m20:55:57.141310 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.unique_dim_info_company_description.20d37b14dd
+[0m20:55:57.155617 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_analysis.unique_dim_info_company_description.20d37b14dd"
+[0m20:55:57.158051 [debug] [Thread-1 (]: Began executing node test.stock_analysis.unique_dim_info_company_description.20d37b14dd
+[0m20:55:57.162975 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_analysis.unique_dim_info_company_description.20d37b14dd"
+[0m20:55:57.164772 [debug] [Thread-1 (]: On test.stock_analysis.unique_dim_info_company_description.20d37b14dd: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "test.stock_analysis.unique_dim_info_company_description.20d37b14dd"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with dbt_test__target as (
+
+  select company_description as unique_field
+  from `dsai-project-462603`.`stock_analysis`.`dim_info`
+  where company_description is not null
+
+)
+
+select
+    unique_field,
+    count(*) as n_records
+
+from dbt_test__target
+group by unique_field
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:55:57.165934 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:57.882305 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:f7da34b8-200b-4356-a791-1bdfb381910b&page=queryresults
+[0m20:55:58.828414 [info ] [Thread-1 (]: 27 of 29 PASS unique_dim_info_company_description .............................. [[32mPASS[0m in 1.69s]
+[0m20:55:58.829671 [debug] [Thread-1 (]: Finished running node test.stock_analysis.unique_dim_info_company_description.20d37b14dd
+[0m20:55:58.830469 [debug] [Thread-1 (]: Began running node test.stock_analysis.unique_dim_info_company_name.3d0ca4669c
+[0m20:55:58.831908 [info ] [Thread-1 (]: 28 of 29 START test unique_dim_info_company_name ............................... [RUN]
+[0m20:55:58.832792 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.unique_dim_info_company_description.20d37b14dd, now test.stock_analysis.unique_dim_info_company_name.3d0ca4669c)
+[0m20:55:58.833365 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.unique_dim_info_company_name.3d0ca4669c
+[0m20:55:58.839082 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_analysis.unique_dim_info_company_name.3d0ca4669c"
+[0m20:55:58.842548 [debug] [Thread-1 (]: Began executing node test.stock_analysis.unique_dim_info_company_name.3d0ca4669c
+[0m20:55:58.847775 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_analysis.unique_dim_info_company_name.3d0ca4669c"
+[0m20:55:58.849789 [debug] [Thread-1 (]: On test.stock_analysis.unique_dim_info_company_name.3d0ca4669c: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "test.stock_analysis.unique_dim_info_company_name.3d0ca4669c"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with dbt_test__target as (
+
+  select company_name as unique_field
+  from `dsai-project-462603`.`stock_analysis`.`dim_info`
+  where company_name is not null
+
+)
+
+select
+    unique_field,
+    count(*) as n_records
+
+from dbt_test__target
+group by unique_field
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:55:58.850525 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:55:59.563302 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:87d152a4-3d81-4908-86e5-b5e74ced0556&page=queryresults
+[0m20:56:00.881807 [info ] [Thread-1 (]: 28 of 29 PASS unique_dim_info_company_name ..................................... [[32mPASS[0m in 2.05s]
+[0m20:56:00.884146 [debug] [Thread-1 (]: Finished running node test.stock_analysis.unique_dim_info_company_name.3d0ca4669c
+[0m20:56:00.885442 [debug] [Thread-1 (]: Began running node test.stock_analysis.unique_dim_info_ticker_symbol.50949bdf5b
+[0m20:56:00.886923 [info ] [Thread-1 (]: 29 of 29 START test unique_dim_info_ticker_symbol .............................. [RUN]
+[0m20:56:00.887923 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.stock_analysis.unique_dim_info_company_name.3d0ca4669c, now test.stock_analysis.unique_dim_info_ticker_symbol.50949bdf5b)
+[0m20:56:00.888783 [debug] [Thread-1 (]: Began compiling node test.stock_analysis.unique_dim_info_ticker_symbol.50949bdf5b
+[0m20:56:00.900546 [debug] [Thread-1 (]: Writing injected SQL for node "test.stock_analysis.unique_dim_info_ticker_symbol.50949bdf5b"
+[0m20:56:00.906170 [debug] [Thread-1 (]: Began executing node test.stock_analysis.unique_dim_info_ticker_symbol.50949bdf5b
+[0m20:56:00.913487 [debug] [Thread-1 (]: Writing runtime sql for node "test.stock_analysis.unique_dim_info_ticker_symbol.50949bdf5b"
+[0m20:56:00.915291 [debug] [Thread-1 (]: On test.stock_analysis.unique_dim_info_ticker_symbol.50949bdf5b: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "test.stock_analysis.unique_dim_info_ticker_symbol.50949bdf5b"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with dbt_test__target as (
+
+  select ticker_symbol as unique_field
+  from `dsai-project-462603`.`stock_analysis`.`dim_info`
+  where ticker_symbol is not null
+
+)
+
+select
+    unique_field,
+    count(*) as n_records
+
+from dbt_test__target
+group by unique_field
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m20:56:00.916176 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:56:02.392119 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:f18f0fc8-a18b-47be-85f9-a15e269ea176&page=queryresults
+[0m20:56:03.375928 [info ] [Thread-1 (]: 29 of 29 PASS unique_dim_info_ticker_symbol .................................... [[32mPASS[0m in 2.49s]
+[0m20:56:03.378316 [debug] [Thread-1 (]: Finished running node test.stock_analysis.unique_dim_info_ticker_symbol.50949bdf5b
+[0m20:56:03.383756 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m20:56:03.385504 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:56:03.386575 [debug] [MainThread]: Connection 'test.stock_analysis.unique_dim_info_ticker_symbol.50949bdf5b' was properly closed.
+[0m20:56:03.387938 [info ] [MainThread]: 
+[0m20:56:03.389308 [info ] [MainThread]: Finished running 29 data tests in 0 hours 0 minutes and 33.45 seconds (33.45s).
+[0m20:56:03.396179 [debug] [MainThread]: Command end result
+[0m20:56:03.461903 [debug] [MainThread]: Wrote artifact WritableManifest to /home/peterlim/user_story/stock_analysis/target/manifest.json
+[0m20:56:03.469788 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/peterlim/user_story/stock_analysis/target/semantic_manifest.json
+[0m20:56:03.487957 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/peterlim/user_story/stock_analysis/target/run_results.json
+[0m20:56:03.488553 [info ] [MainThread]: 
+[0m20:56:03.489267 [info ] [MainThread]: [31mCompleted with 12 errors, 0 partial successes, and 0 warnings:[0m
+[0m20:56:03.489889 [info ] [MainThread]: 
+[0m20:56:03.490537 [error] [MainThread]:   Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_date_date__date (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:56:03.491166 [info ] [MainThread]: 
+[0m20:56:03.491887 [error] [MainThread]:   Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_description__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:56:03.492483 [info ] [MainThread]: 
+[0m20:56:03.493155 [error] [MainThread]:   Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_info_company_name__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:56:03.493874 [info ] [MainThread]: 
+[0m20:56:03.494731 [error] [MainThread]:   Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_info_country__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:56:03.496101 [info ] [MainThread]: 
+[0m20:56:03.498190 [error] [MainThread]:   Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_info_industry__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:56:03.500824 [info ] [MainThread]: 
+[0m20:56:03.502107 [error] [MainThread]:   Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_info_sector__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:56:03.503000 [info ] [MainThread]: 
+[0m20:56:03.503955 [error] [MainThread]:   Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_dim_info_ticker_symbol__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:56:03.504670 [info ] [MainThread]: 
+[0m20:56:03.505430 [error] [MainThread]:   Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_fact_security_date__date (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:56:03.506141 [info ] [MainThread]: 
+[0m20:56:03.506900 [error] [MainThread]:   Compilation Error in test dbt_expectations_expect_column_values_to_be_of_type_fact_security_ticker_symbol__string (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:56:03.507501 [info ] [MainThread]: 
+[0m20:56:03.508156 [error] [MainThread]:   Compilation Error in test dbt_expectations_expect_compound_columns_to_be_unique_fact_security_ticker_symbol__date (models/schema.yml)
+  'dbt_expectations' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:56:03.509050 [info ] [MainThread]: 
+[0m20:56:03.510345 [error] [MainThread]:   Compilation Error in test dbt_utils_accepted_range_dim_date_date__CURRENT_DATE_ (models/schema.yml)
+  'dbt_utils' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:56:03.511889 [info ] [MainThread]: 
+[0m20:56:03.513057 [error] [MainThread]:   Compilation Error in test dbt_utils_accepted_range_fact_security_date__CURRENT_DATE_ (models/schema.yml)
+  'dbt_utils' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m20:56:03.514165 [info ] [MainThread]: 
+[0m20:56:03.515153 [info ] [MainThread]: Done. PASS=17 WARN=0 ERROR=12 SKIP=0 TOTAL=29
+[0m20:56:03.516871 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": false, "command_wall_clock_time": 35.807972, "process_in_blocks": "1776", "process_kernel_time": 1.886322, "process_mem_max_rss": "268632", "process_out_blocks": "2864", "process_user_time": 5.406785}
+[0m20:56:03.517913 [debug] [MainThread]: Command `dbt test` failed at 20:56:03.517750 after 35.81 seconds
+[0m20:56:03.518738 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f951ebb2d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f94e59d7e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f94e59d4bb0>]}
+[0m20:56:03.519445 [debug] [MainThread]: Flushing usage events
+[0m20:56:04.542173 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:58:48.950976 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b78c0ad10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b77bb5e40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b77bb5ea0>]}
+
+
+============================== 20:58:48.954170 | 3899df33-63f7-4829-b089-69f99fa31ee5 ==============================
+[0m20:58:48.954170 [info ] [MainThread]: Running with dbt=1.9.2
+[0m20:58:48.954884 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/home/peterlim/user_story/stock_analysis/logs', 'version_check': 'True', 'profiles_dir': '/home/peterlim/user_story/stock_analysis', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt deps', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m20:58:49.156607 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3899df33-63f7-4829-b089-69f99fa31ee5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b77bb5b40>]}
+[0m20:58:49.178168 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-jvuq5m8x'
+[0m20:58:49.178935 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m20:58:49.652023 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m20:58:49.653208 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m20:58:49.692172 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m20:58:49.702671 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/calogica/dbt_expectations.json
+[0m20:58:49.733760 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/calogica/dbt_expectations.json 200
+[0m20:58:49.735187 [warn ] [MainThread]: [[33mWARNING[0m]: Deprecated functionality
+The `calogica/dbt_expectations` package is deprecated in favor of
+`metaplane/dbt_expectations`. Please update your `packages.yml` configuration to
+use `metaplane/dbt_expectations` instead.
+[0m20:58:49.735774 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '3899df33-63f7-4829-b089-69f99fa31ee5', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b779ccb20>]}
+[0m20:58:49.739125 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/calogica/dbt_date.json
+[0m20:58:49.772964 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/calogica/dbt_date.json 200
+[0m20:58:49.793423 [info ] [MainThread]: Updating lock file in file path: /home/peterlim/user_story/stock_analysis/package-lock.yml
+[0m20:58:49.799733 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-g536hbwa'
+[0m20:58:49.809759 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m20:58:50.230041 [info ] [MainThread]: Installed from version 1.1.1
+[0m20:58:50.230842 [info ] [MainThread]: Updated version available: 1.3.0
+[0m20:58:50.231864 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '3899df33-63f7-4829-b089-69f99fa31ee5', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b79cc0790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b77abd990>]}
+[0m20:58:50.232671 [info ] [MainThread]: Installing calogica/dbt_expectations
+[0m20:58:50.900289 [info ] [MainThread]: Installed from version 0.10.4
+[0m20:58:50.901469 [info ] [MainThread]: Up to date!
+[0m20:58:50.902020 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '3899df33-63f7-4829-b089-69f99fa31ee5', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b79cc0790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b779cc9a0>]}
+[0m20:58:50.902666 [info ] [MainThread]: Installing calogica/dbt_date
+[0m20:58:51.217974 [info ] [MainThread]: Installed from version 0.10.1
+[0m20:58:51.218670 [info ] [MainThread]: Up to date!
+[0m20:58:51.219290 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '3899df33-63f7-4829-b089-69f99fa31ee5', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b79cc0790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b779ccca0>]}
+[0m20:58:51.219807 [info ] [MainThread]: 
+[0m20:58:51.220423 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m20:58:51.225003 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 2.3649013, "process_in_blocks": "152", "process_kernel_time": 0.39981, "process_mem_max_rss": "107056", "process_out_blocks": "23072", "process_user_time": 2.242837}
+[0m20:58:51.225700 [debug] [MainThread]: Command `dbt deps` succeeded at 20:58:51.225579 after 2.37 seconds
+[0m20:58:51.226069 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b78c0ad10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b77bb5db0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2b77abdf30>]}
+[0m20:58:51.226442 [debug] [MainThread]: Flushing usage events
+[0m20:58:52.197597 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:59:09.482249 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa5cca6d40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa5bc55cc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa5bc55d20>]}
+
+
+============================== 20:59:09.486379 | f59523ab-2916-42a6-8151-1d4fe16b6538 ==============================
+[0m20:59:09.486379 [info ] [MainThread]: Running with dbt=1.9.2
+[0m20:59:09.487155 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/home/peterlim/user_story/stock_analysis', 'log_path': '/home/peterlim/user_story/stock_analysis/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'invocation_command': 'dbt run', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m20:59:10.866654 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f59523ab-2916-42a6-8151-1d4fe16b6538', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa2818a1a0>]}
+[0m20:59:10.973882 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f59523ab-2916-42a6-8151-1d4fe16b6538', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa5c277820>]}
+[0m20:59:10.974784 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m20:59:11.173400 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m20:59:11.298533 [info ] [MainThread]: Unable to do partial parsing because a project dependency has been added
+[0m20:59:11.299367 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'f59523ab-2916-42a6-8151-1d4fe16b6538', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa5c2767a0>]}
+[0m20:59:14.123765 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f59523ab-2916-42a6-8151-1d4fe16b6538', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa2390c5e0>]}
+[0m20:59:14.260226 [debug] [MainThread]: Wrote artifact WritableManifest to /home/peterlim/user_story/stock_analysis/target/manifest.json
+[0m20:59:14.264173 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/peterlim/user_story/stock_analysis/target/semantic_manifest.json
+[0m20:59:14.280818 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f59523ab-2916-42a6-8151-1d4fe16b6538', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa23b718d0>]}
+[0m20:59:14.281540 [info ] [MainThread]: Found 3 models, 29 data tests, 4 sources, 872 macros
+[0m20:59:14.282282 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f59523ab-2916-42a6-8151-1d4fe16b6538', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa23b71330>]}
+[0m20:59:14.286053 [info ] [MainThread]: 
+[0m20:59:14.286683 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m20:59:14.287151 [info ] [MainThread]: 
+[0m20:59:14.287827 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m20:59:14.293063 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_dsai-project-462603'
+[0m20:59:14.293808 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m20:59:15.800794 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dsai-project-462603, now list_dsai-project-462603_stock_analysis)
+[0m20:59:15.801917 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m20:59:16.191679 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f59523ab-2916-42a6-8151-1d4fe16b6538', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa5bbf3790>]}
+[0m20:59:16.192439 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m20:59:16.196997 [debug] [Thread-1 (]: Began running node model.stock_analysis.dim_date
+[0m20:59:16.197823 [info ] [Thread-1 (]: 1 of 3 START sql table model stock_analysis.dim_date ........................... [RUN]
+[0m20:59:16.198756 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dsai-project-462603_stock_analysis, now model.stock_analysis.dim_date)
+[0m20:59:16.199364 [debug] [Thread-1 (]: Began compiling node model.stock_analysis.dim_date
+[0m20:59:16.211452 [debug] [Thread-1 (]: Writing injected SQL for node "model.stock_analysis.dim_date"
+[0m20:59:16.212797 [debug] [Thread-1 (]: Began executing node model.stock_analysis.dim_date
+[0m20:59:16.238000 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:59:16.638186 [debug] [Thread-1 (]: Writing runtime sql for node "model.stock_analysis.dim_date"
+[0m20:59:16.639725 [debug] [Thread-1 (]: On model.stock_analysis.dim_date: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "model.stock_analysis.dim_date"} */
+
+  
+    
+
+    create or replace table `dsai-project-462603`.`stock_analysis`.`dim_date`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+WITH deduplicated_dates AS (
+    SELECT DISTINCT date
+    FROM `dsai-project-462603`.`stock_analysis`.`combined_tickers`
+)
+SELECT
+    DATE(date) AS date,
+    EXTRACT(YEAR FROM date) AS year,
+    EXTRACT(MONTH FROM date) AS month,
+    EXTRACT(DAY FROM date) AS day,
+    EXTRACT(QUARTER FROM date) AS quarter,
+    FORMAT_TIMESTAMP('%A', date) AS day_of_week
+FROM 
+    deduplicated_dates
+    );
+  
+[0m20:59:17.266403 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:0e4eb708-be77-453b-8bd5-8a88b702c743&page=queryresults
+[0m20:59:19.723866 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f59523ab-2916-42a6-8151-1d4fe16b6538', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa5bc1d120>]}
+[0m20:59:19.725219 [info ] [Thread-1 (]: 1 of 3 OK created sql table model stock_analysis.dim_date ...................... [[32mCREATE TABLE (1.5k rows, 176.8 KiB processed)[0m in 3.52s]
+[0m20:59:19.726593 [debug] [Thread-1 (]: Finished running node model.stock_analysis.dim_date
+[0m20:59:19.727373 [debug] [Thread-1 (]: Began running node model.stock_analysis.dim_info
+[0m20:59:19.728676 [info ] [Thread-1 (]: 2 of 3 START sql table model stock_analysis.dim_info ........................... [RUN]
+[0m20:59:19.729722 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.stock_analysis.dim_date, now model.stock_analysis.dim_info)
+[0m20:59:19.730264 [debug] [Thread-1 (]: Began compiling node model.stock_analysis.dim_info
+[0m20:59:19.735095 [debug] [Thread-1 (]: Writing injected SQL for node "model.stock_analysis.dim_info"
+[0m20:59:19.735970 [debug] [Thread-1 (]: Began executing node model.stock_analysis.dim_info
+[0m20:59:19.739145 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:59:20.122179 [debug] [Thread-1 (]: Writing runtime sql for node "model.stock_analysis.dim_info"
+[0m20:59:20.123209 [debug] [Thread-1 (]: On model.stock_analysis.dim_info: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "model.stock_analysis.dim_info"} */
+
+  
+    
+
+    create or replace table `dsai-project-462603`.`stock_analysis`.`dim_info`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+SELECT
+  ticker_symbol,
+  company_description,
+  company_name,
+  country,
+  industry,
+  sector
+FROM `dsai-project-462603`.`stock_analysis`.`stock_info`
+    );
+  
+[0m20:59:22.229121 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:6c5d91c2-4231-4f12-92f8-fa667402511b&page=queryresults
+[0m20:59:24.643544 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f59523ab-2916-42a6-8151-1d4fe16b6538', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa202abf70>]}
+[0m20:59:24.644533 [info ] [Thread-1 (]: 2 of 3 OK created sql table model stock_analysis.dim_info ...................... [[32mCREATE TABLE (15.0 rows, 11.9 KiB processed)[0m in 4.91s]
+[0m20:59:24.645393 [debug] [Thread-1 (]: Finished running node model.stock_analysis.dim_info
+[0m20:59:24.645994 [debug] [Thread-1 (]: Began running node model.stock_analysis.fact_security
+[0m20:59:24.647298 [info ] [Thread-1 (]: 3 of 3 START sql table model stock_analysis.fact_security ...................... [RUN]
+[0m20:59:24.648169 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.stock_analysis.dim_info, now model.stock_analysis.fact_security)
+[0m20:59:24.648922 [debug] [Thread-1 (]: Began compiling node model.stock_analysis.fact_security
+[0m20:59:24.657896 [debug] [Thread-1 (]: Writing injected SQL for node "model.stock_analysis.fact_security"
+[0m20:59:24.658763 [debug] [Thread-1 (]: Began executing node model.stock_analysis.fact_security
+[0m20:59:24.662271 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m20:59:25.065422 [debug] [Thread-1 (]: Writing runtime sql for node "model.stock_analysis.fact_security"
+[0m20:59:25.066488 [debug] [Thread-1 (]: On model.stock_analysis.fact_security: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "model.stock_analysis.fact_security"} */
+
+  
+    
+
+    create or replace table `dsai-project-462603`.`stock_analysis`.`fact_security`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+WITH dup_data AS (
+SELECT
+  t.ticker_symbol,
+  DATE(t.date) AS date,
+  t.close_price,
+  t.high_price,
+  t.low_price,
+  t.open_price,
+  t.stock_splits,
+  t.dividend,
+  t.volume_traded,
+  f.GDP_growth_rate,
+  f.UMCSENT,
+  f.inflation_rate,
+  f.interest_rate,
+  f.unemployment_rate,
+  f.industrial_production,
+  f.ten_yr_treasury,
+  i.forward_eps,
+  i.forward_pe,
+  i.market_cap,
+  i.trailing_eps,
+  i.trailing_pe,
+  ta.ema_50,
+  ta.rsi_14,
+  ta.sma_50
+FROM `dsai-project-462603`.`stock_analysis`.`combined_tickers` t
+LEFT JOIN `dsai-project-462603`.`stock_analysis`.`fred` f
+  ON DATE(t.date) = DATE(f.date)
+LEFT JOIN `dsai-project-462603`.`stock_analysis`.`stock_info` i
+  ON t.ticker_symbol = i.ticker_symbol AND DATE(t.date) BETWEEN '2025-04-01' AND '2025-06-30'
+LEFT JOIN `dsai-project-462603`.`stock_analysis`.`techincal_indicator` ta
+  ON DATE(t.date) = DATE(ta.date) and t.ticker_symbol = ta.ticker_symbol
+)
+SELECT 
+  ticker_symbol,
+  date,
+  ANY_VALUE(close_price) AS close_price,
+  ANY_VALUE(high_price) AS high_price,
+  ANY_VALUE(low_price) AS low_price,
+  ANY_VALUE(open_price) AS open_price,
+  ANY_VALUE(stock_splits) AS stock_splits,
+  ANY_VALUE(dividend) AS dividend,
+  ANY_VALUE(volume_traded) AS volume_traded,
+  ANY_VALUE(GDP_growth_rate) AS GDP_growth_rate,
+  ANY_VALUE(UMCSENT) AS UMCSENT,
+  ANY_VALUE(inflation_rate) AS inflation_rate,
+  ANY_VALUE(interest_rate) AS interest_rate,
+  ANY_VALUE(unemployment_rate) AS unemployment_rate,
+  ANY_VALUE(ten_yr_treasury) AS ten_yr_treasury,
+  ANY_VALUE(industrial_production) AS industrial_production,
+  ANY_VALUE(forward_eps) AS forward_eps,
+  ANY_VALUE(forward_pe) AS forward_pe,
+  ANY_VALUE(market_cap) AS market_cap,
+  ANY_VALUE(trailing_eps) AS trailing_eps,
+  ANY_VALUE(trailing_pe) AS trailing_pe,
+  ANY_VALUE(ema_50) AS ema_50,
+  ANY_VALUE(rsi_14) AS rsi_14,
+  ANY_VALUE(sma_50) AS sma_50
+FROM dup_data 
+GROUP BY ticker_symbol, date
+    );
+  
+[0m20:59:25.727320 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:ae763b80-e086-4f19-8366-23500fa3002e&page=queryresults
+[0m20:59:28.708558 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f59523ab-2916-42a6-8151-1d4fe16b6538', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa202abf70>]}
+[0m20:59:28.709722 [info ] [Thread-1 (]: 3 of 3 OK created sql table model stock_analysis.fact_security ................. [[32mCREATE TABLE (22.6k rows, 1.9 MiB processed)[0m in 4.06s]
+[0m20:59:28.710926 [debug] [Thread-1 (]: Finished running node model.stock_analysis.fact_security
+[0m20:59:28.713652 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m20:59:28.714849 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m20:59:28.715431 [debug] [MainThread]: Connection 'model.stock_analysis.fact_security' was properly closed.
+[0m20:59:28.716057 [info ] [MainThread]: 
+[0m20:59:28.717267 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 14.43 seconds (14.43s).
+[0m20:59:28.719150 [debug] [MainThread]: Command end result
+[0m20:59:28.799607 [debug] [MainThread]: Wrote artifact WritableManifest to /home/peterlim/user_story/stock_analysis/target/manifest.json
+[0m20:59:28.802201 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/peterlim/user_story/stock_analysis/target/semantic_manifest.json
+[0m20:59:28.810212 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/peterlim/user_story/stock_analysis/target/run_results.json
+[0m20:59:28.810685 [info ] [MainThread]: 
+[0m20:59:28.811293 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m20:59:28.811876 [info ] [MainThread]: 
+[0m20:59:28.812557 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m20:59:28.813724 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 19.419987, "process_in_blocks": "0", "process_kernel_time": 1.670052, "process_mem_max_rss": "268344", "process_out_blocks": "6112", "process_user_time": 6.720212}
+[0m20:59:28.814503 [debug] [MainThread]: Command `dbt run` succeeded at 20:59:28.814366 after 19.42 seconds
+[0m20:59:28.815029 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa5cca6d40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa2818a1a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7faa23e10c70>]}
+[0m20:59:28.815517 [debug] [MainThread]: Flushing usage events
+[0m20:59:29.829905 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:26:11.912506 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffbcec02da0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffbcdb89cc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffbcdb89d20>]}
+
+
+============================== 12:26:11.916137 | 3d683742-13a0-4b4b-abbb-cc30141a37c8 ==============================
+[0m12:26:11.916137 [info ] [MainThread]: Running with dbt=1.9.2
+[0m12:26:11.916760 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/home/peterlim/user_story/stock_analysis/logs', 'profiles_dir': '/home/peterlim/user_story/stock_analysis', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m12:26:14.902407 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3d683742-13a0-4b4b-abbb-cc30141a37c8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffbcdb522c0>]}
+[0m12:26:15.029849 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3d683742-13a0-4b4b-abbb-cc30141a37c8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb95f7b880>]}
+[0m12:26:15.031111 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m12:26:15.282434 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m12:26:15.883766 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m12:26:15.885163 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m12:26:15.954714 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3d683742-13a0-4b4b-abbb-cc30141a37c8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb959fe770>]}
+[0m12:26:16.161094 [debug] [MainThread]: Wrote artifact WritableManifest to /home/peterlim/user_story/stock_analysis/target/manifest.json
+[0m12:26:16.167196 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/peterlim/user_story/stock_analysis/target/semantic_manifest.json
+[0m12:26:16.207739 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3d683742-13a0-4b4b-abbb-cc30141a37c8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb959f3a30>]}
+[0m12:26:16.208497 [info ] [MainThread]: Found 3 models, 29 data tests, 4 sources, 872 macros
+[0m12:26:16.209025 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3d683742-13a0-4b4b-abbb-cc30141a37c8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb959f2c20>]}
+[0m12:26:16.214483 [info ] [MainThread]: 
+[0m12:26:16.215272 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m12:26:16.215951 [info ] [MainThread]: 
+[0m12:26:16.216701 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m12:26:16.223636 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_dsai-project-462603'
+[0m12:26:16.224697 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:26:20.851688 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dsai-project-462603, now list_dsai-project-462603_stock_analysis)
+[0m12:26:20.853160 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:26:21.318266 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3d683742-13a0-4b4b-abbb-cc30141a37c8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb95e45f00>]}
+[0m12:26:21.319712 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m12:26:21.328234 [debug] [Thread-1 (]: Began running node model.stock_analysis.dim_date
+[0m12:26:21.329795 [info ] [Thread-1 (]: 1 of 3 START sql table model stock_analysis.dim_date ........................... [RUN]
+[0m12:26:21.332575 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dsai-project-462603_stock_analysis, now model.stock_analysis.dim_date)
+[0m12:26:21.334581 [debug] [Thread-1 (]: Began compiling node model.stock_analysis.dim_date
+[0m12:26:19.552087 [debug] [Thread-1 (]: Writing injected SQL for node "model.stock_analysis.dim_date"
+[0m12:26:19.556908 [debug] [Thread-1 (]: Began executing node model.stock_analysis.dim_date
+[0m12:26:19.596660 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:26:20.076940 [debug] [Thread-1 (]: Writing runtime sql for node "model.stock_analysis.dim_date"
+[0m12:26:20.078570 [debug] [Thread-1 (]: On model.stock_analysis.dim_date: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "model.stock_analysis.dim_date"} */
+
+  
+    
+
+    create or replace table `dsai-project-462603`.`stock_analysis`.`dim_date`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+WITH deduplicated_dates AS (
+    SELECT DISTINCT date
+    FROM `dsai-project-462603`.`stock_analysis`.`combined_tickers`
+)
+SELECT
+    DATE(date) AS date,
+    EXTRACT(YEAR FROM date) AS year,
+    EXTRACT(MONTH FROM date) AS month,
+    EXTRACT(DAY FROM date) AS day,
+    EXTRACT(QUARTER FROM date) AS quarter,
+    FORMAT_TIMESTAMP('%A', date) AS day_of_week
+FROM 
+    deduplicated_dates
+    );
+  
+[0m12:26:20.770314 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:9d91392e-59d0-476e-8c8c-070b84fe07fb&page=queryresults
+[0m12:26:23.353196 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3d683742-13a0-4b4b-abbb-cc30141a37c8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb95d1bd60>]}
+[0m12:26:23.354198 [info ] [Thread-1 (]: 1 of 3 OK created sql table model stock_analysis.dim_date ...................... [[32mCREATE TABLE (2.5k rows, 137.5 KiB processed)[0m in 2.02s]
+[0m12:26:23.355021 [debug] [Thread-1 (]: Finished running node model.stock_analysis.dim_date
+[0m12:26:23.355626 [debug] [Thread-1 (]: Began running node model.stock_analysis.dim_info
+[0m12:26:23.356466 [info ] [Thread-1 (]: 2 of 3 START sql table model stock_analysis.dim_info ........................... [RUN]
+[0m12:26:23.357213 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.stock_analysis.dim_date, now model.stock_analysis.dim_info)
+[0m12:26:23.357767 [debug] [Thread-1 (]: Began compiling node model.stock_analysis.dim_info
+[0m12:26:23.366045 [debug] [Thread-1 (]: Writing injected SQL for node "model.stock_analysis.dim_info"
+[0m12:26:23.367203 [debug] [Thread-1 (]: Began executing node model.stock_analysis.dim_info
+[0m12:26:23.371743 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:26:23.796099 [debug] [Thread-1 (]: Writing runtime sql for node "model.stock_analysis.dim_info"
+[0m12:26:23.797803 [debug] [Thread-1 (]: On model.stock_analysis.dim_info: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "model.stock_analysis.dim_info"} */
+
+  
+    
+
+    create or replace table `dsai-project-462603`.`stock_analysis`.`dim_info`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+SELECT
+  ticker_symbol,
+  company_description,
+  company_name,
+  country,
+  industry,
+  sector
+FROM `dsai-project-462603`.`stock_analysis`.`stock_info`
+    );
+  
+[0m12:26:24.616366 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:a1a04b73-186a-45d6-aecb-1a5e73b93cdb&page=queryresults
+[0m12:26:27.127323 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3d683742-13a0-4b4b-abbb-cc30141a37c8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffbceca9c00>]}
+[0m12:26:27.128469 [info ] [Thread-1 (]: 2 of 3 OK created sql table model stock_analysis.dim_info ...................... [[32mCREATE TABLE (7.0 rows, 10.9 KiB processed)[0m in 3.77s]
+[0m12:26:27.129357 [debug] [Thread-1 (]: Finished running node model.stock_analysis.dim_info
+[0m12:26:27.130028 [debug] [Thread-1 (]: Began running node model.stock_analysis.fact_security
+[0m12:26:27.131023 [info ] [Thread-1 (]: 3 of 3 START sql table model stock_analysis.fact_security ...................... [RUN]
+[0m12:26:27.131858 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.stock_analysis.dim_info, now model.stock_analysis.fact_security)
+[0m12:26:27.132407 [debug] [Thread-1 (]: Began compiling node model.stock_analysis.fact_security
+[0m12:26:27.140342 [debug] [Thread-1 (]: Writing injected SQL for node "model.stock_analysis.fact_security"
+[0m12:26:27.141999 [debug] [Thread-1 (]: Began executing node model.stock_analysis.fact_security
+[0m12:26:27.146063 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m12:26:27.601417 [debug] [Thread-1 (]: Writing runtime sql for node "model.stock_analysis.fact_security"
+[0m12:26:27.602762 [debug] [Thread-1 (]: On model.stock_analysis.fact_security: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "model.stock_analysis.fact_security"} */
+
+  
+    
+
+    create or replace table `dsai-project-462603`.`stock_analysis`.`fact_security`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+WITH dup_data AS (
+SELECT
+  t.ticker_symbol,
+  DATE(t.date) AS date,
+  t.close_price,
+  t.high_price,
+  t.low_price,
+  t.open_price,
+  t.stock_splits,
+  t.dividend,
+  t.volume_traded,
+  f.GDP_growth_rate,
+  f.UMCSENT,
+  f.inflation_rate,
+  f.interest_rate,
+  f.unemployment_rate,
+  f.industrial_production,
+  f.ten_yr_treasury,
+  i.forward_eps,
+  i.forward_pe,
+  i.market_cap,
+  i.trailing_eps,
+  i.trailing_pe,
+  ta.ema_50,
+  ta.rsi_14,
+  ta.sma_50
+FROM `dsai-project-462603`.`stock_analysis`.`combined_tickers` t
+LEFT JOIN `dsai-project-462603`.`stock_analysis`.`fred` f
+  ON DATE(t.date) = DATE(f.date)
+LEFT JOIN `dsai-project-462603`.`stock_analysis`.`stock_info` i
+  ON t.ticker_symbol = i.ticker_symbol AND DATE(t.date) BETWEEN '2025-04-01' AND '2025-06-30'
+LEFT JOIN `dsai-project-462603`.`stock_analysis`.`techincal_indicator` ta
+  ON DATE(t.date) = DATE(ta.date) and t.ticker_symbol = ta.ticker_symbol
+)
+SELECT 
+  ticker_symbol,
+  date,
+  ANY_VALUE(close_price) AS close_price,
+  ANY_VALUE(high_price) AS high_price,
+  ANY_VALUE(low_price) AS low_price,
+  ANY_VALUE(open_price) AS open_price,
+  ANY_VALUE(stock_splits) AS stock_splits,
+  ANY_VALUE(dividend) AS dividend,
+  ANY_VALUE(volume_traded) AS volume_traded,
+  ANY_VALUE(GDP_growth_rate) AS GDP_growth_rate,
+  ANY_VALUE(UMCSENT) AS UMCSENT,
+  ANY_VALUE(inflation_rate) AS inflation_rate,
+  ANY_VALUE(interest_rate) AS interest_rate,
+  ANY_VALUE(unemployment_rate) AS unemployment_rate,
+  ANY_VALUE(ten_yr_treasury) AS ten_yr_treasury,
+  ANY_VALUE(industrial_production) AS industrial_production,
+  ANY_VALUE(forward_eps) AS forward_eps,
+  ANY_VALUE(forward_pe) AS forward_pe,
+  ANY_VALUE(market_cap) AS market_cap,
+  ANY_VALUE(trailing_eps) AS trailing_eps,
+  ANY_VALUE(trailing_pe) AS trailing_pe,
+  ANY_VALUE(ema_50) AS ema_50,
+  ANY_VALUE(rsi_14) AS rsi_14,
+  ANY_VALUE(sma_50) AS sma_50
+FROM dup_data 
+GROUP BY ticker_symbol, date
+    );
+  
+[0m12:26:28.201452 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:902866e6-291a-48dd-ae28-78cd54da08cb&page=queryresults
+[0m12:26:31.372490 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3d683742-13a0-4b4b-abbb-cc30141a37c8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffbceca9c00>]}
+[0m12:26:31.373646 [info ] [Thread-1 (]: 3 of 3 OK created sql table model stock_analysis.fact_security ................. [[32mCREATE TABLE (17.6k rows, 2.2 MiB processed)[0m in 4.24s]
+[0m12:26:31.374499 [debug] [Thread-1 (]: Finished running node model.stock_analysis.fact_security
+[0m12:26:31.377147 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m12:26:31.378620 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:26:31.379276 [debug] [MainThread]: Connection 'model.stock_analysis.fact_security' was properly closed.
+[0m12:26:31.379946 [info ] [MainThread]: 
+[0m12:26:31.380519 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 15.16 seconds (15.16s).
+[0m12:26:31.381825 [debug] [MainThread]: Command end result
+[0m12:26:31.454607 [debug] [MainThread]: Wrote artifact WritableManifest to /home/peterlim/user_story/stock_analysis/target/manifest.json
+[0m12:26:31.459472 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/peterlim/user_story/stock_analysis/target/semantic_manifest.json
+[0m12:26:31.469535 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/peterlim/user_story/stock_analysis/target/run_results.json
+[0m12:26:31.470380 [info ] [MainThread]: 
+[0m12:26:31.471110 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:26:31.471802 [info ] [MainThread]: 
+[0m12:26:31.472438 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m12:26:31.473431 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 21.480322, "process_in_blocks": "69528", "process_kernel_time": 2.467004, "process_mem_max_rss": "264464", "process_out_blocks": "4112", "process_user_time": 4.587086}
+[0m12:26:31.474845 [debug] [MainThread]: Command `dbt run` succeeded at 12:26:31.474675 after 21.48 seconds
+[0m12:26:31.475428 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffbcec02da0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffbcdb522c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ffb959ab9a0>]}
+[0m12:26:31.475987 [debug] [MainThread]: Flushing usage events
+[0m12:26:33.168126 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:44:34.233143 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1dbd16ad40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1dbc119cc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1dbc119d20>]}
+
+
+============================== 13:44:34.238302 | b8ca8d78-2076-48b2-891f-d46fa809c2d9 ==============================
+[0m13:44:34.238302 [info ] [MainThread]: Running with dbt=1.9.2
+[0m13:44:34.239094 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/peterlim/user_story/stock_analysis', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/home/peterlim/user_story/stock_analysis/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m13:44:36.012605 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b8ca8d78-2076-48b2-891f-d46fa809c2d9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1dbc0e2aa0>]}
+[0m13:44:36.128646 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b8ca8d78-2076-48b2-891f-d46fa809c2d9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1d884aa9b0>]}
+[0m13:44:36.130499 [info ] [MainThread]: Registered adapter: bigquery=1.9.1
+[0m13:44:36.353977 [debug] [MainThread]: checksum: 12b12750b70de726cfd89136b8e24afc3f3e77597a97bff40ab7e5f9b39d5e18, vars: {}, profile: , target: , version: 1.9.2
+[0m13:44:36.857240 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m13:44:36.858087 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m13:44:36.925390 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b8ca8d78-2076-48b2-891f-d46fa809c2d9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1d83d06740>]}
+[0m13:44:37.078394 [debug] [MainThread]: Wrote artifact WritableManifest to /home/peterlim/user_story/stock_analysis/target/manifest.json
+[0m13:44:37.082818 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/peterlim/user_story/stock_analysis/target/semantic_manifest.json
+[0m13:44:37.126306 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b8ca8d78-2076-48b2-891f-d46fa809c2d9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1d83efb940>]}
+[0m13:44:37.127310 [info ] [MainThread]: Found 3 models, 29 data tests, 4 sources, 872 macros
+[0m13:44:37.127987 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b8ca8d78-2076-48b2-891f-d46fa809c2d9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1dbce08730>]}
+[0m13:44:37.133712 [info ] [MainThread]: 
+[0m13:44:37.134360 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m13:44:37.134864 [info ] [MainThread]: 
+[0m13:44:37.135746 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m13:44:37.143256 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_dsai-project-462603'
+[0m13:44:37.144255 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:44:42.411176 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dsai-project-462603, now list_dsai-project-462603_stock_analysis)
+[0m13:44:42.412597 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:44:43.085501 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b8ca8d78-2076-48b2-891f-d46fa809c2d9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1dbc118af0>]}
+[0m13:44:43.086306 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:44:43.089173 [debug] [Thread-1 (]: Began running node model.stock_analysis.dim_date
+[0m13:44:43.089950 [info ] [Thread-1 (]: 1 of 3 START sql table model stock_analysis.dim_date ........................... [RUN]
+[0m13:44:43.090710 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_dsai-project-462603_stock_analysis, now model.stock_analysis.dim_date)
+[0m13:44:43.091360 [debug] [Thread-1 (]: Began compiling node model.stock_analysis.dim_date
+[0m13:44:43.107163 [debug] [Thread-1 (]: Writing injected SQL for node "model.stock_analysis.dim_date"
+[0m13:44:43.110121 [debug] [Thread-1 (]: Began executing node model.stock_analysis.dim_date
+[0m13:44:43.138231 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:44:43.972524 [debug] [Thread-1 (]: Writing runtime sql for node "model.stock_analysis.dim_date"
+[0m13:44:43.976286 [debug] [Thread-1 (]: On model.stock_analysis.dim_date: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "model.stock_analysis.dim_date"} */
+
+  
+    
+
+    create or replace table `dsai-project-462603`.`stock_analysis`.`dim_date`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+WITH deduplicated_dates AS (
+    SELECT DISTINCT date
+    FROM `dsai-project-462603`.`stock_analysis`.`combined_tickers`
+)
+SELECT
+    DATE(date) AS date,
+    EXTRACT(YEAR FROM date) AS year,
+    EXTRACT(MONTH FROM date) AS month,
+    EXTRACT(DAY FROM date) AS day,
+    EXTRACT(QUARTER FROM date) AS quarter,
+    FORMAT_TIMESTAMP('%A', date) AS day_of_week
+FROM 
+    deduplicated_dates
+    );
+  
+[0m13:44:44.706394 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:ad5107f6-46b7-44f1-a05b-61642a86f835&page=queryresults
+[0m13:44:47.304463 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b8ca8d78-2076-48b2-891f-d46fa809c2d9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1d8847e320>]}
+[0m13:44:47.305598 [info ] [Thread-1 (]: 1 of 3 OK created sql table model stock_analysis.dim_date ...................... [[32mCREATE TABLE (1.5k rows, 82.5 KiB processed)[0m in 4.21s]
+[0m13:44:47.306673 [debug] [Thread-1 (]: Finished running node model.stock_analysis.dim_date
+[0m13:44:47.307658 [debug] [Thread-1 (]: Began running node model.stock_analysis.dim_info
+[0m13:44:47.308678 [info ] [Thread-1 (]: 2 of 3 START sql table model stock_analysis.dim_info ........................... [RUN]
+[0m13:44:47.309678 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.stock_analysis.dim_date, now model.stock_analysis.dim_info)
+[0m13:44:47.310279 [debug] [Thread-1 (]: Began compiling node model.stock_analysis.dim_info
+[0m13:44:47.316628 [debug] [Thread-1 (]: Writing injected SQL for node "model.stock_analysis.dim_info"
+[0m13:44:47.318971 [debug] [Thread-1 (]: Began executing node model.stock_analysis.dim_info
+[0m13:44:47.324508 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:44:47.788443 [debug] [Thread-1 (]: Writing runtime sql for node "model.stock_analysis.dim_info"
+[0m13:44:47.790047 [debug] [Thread-1 (]: On model.stock_analysis.dim_info: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "model.stock_analysis.dim_info"} */
+
+  
+    
+
+    create or replace table `dsai-project-462603`.`stock_analysis`.`dim_info`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+SELECT
+  ticker_symbol,
+  company_description,
+  company_name,
+  country,
+  industry,
+  sector
+FROM `dsai-project-462603`.`stock_analysis`.`stock_info`
+    );
+  
+[0m13:44:48.423670 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:339860c7-e53b-4d82-b0c7-bd61f8aa5d26&page=queryresults
+[0m13:44:50.954189 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b8ca8d78-2076-48b2-891f-d46fa809c2d9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1d83d3cdc0>]}
+[0m13:44:50.955540 [info ] [Thread-1 (]: 2 of 3 OK created sql table model stock_analysis.dim_info ...................... [[32mCREATE TABLE (7.0 rows, 10.9 KiB processed)[0m in 3.64s]
+[0m13:44:50.956593 [debug] [Thread-1 (]: Finished running node model.stock_analysis.dim_info
+[0m13:44:50.957306 [debug] [Thread-1 (]: Began running node model.stock_analysis.fact_security
+[0m13:44:50.958549 [info ] [Thread-1 (]: 3 of 3 START sql table model stock_analysis.fact_security ...................... [RUN]
+[0m13:44:50.959385 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.stock_analysis.dim_info, now model.stock_analysis.fact_security)
+[0m13:44:50.960108 [debug] [Thread-1 (]: Began compiling node model.stock_analysis.fact_security
+[0m13:44:50.967905 [debug] [Thread-1 (]: Writing injected SQL for node "model.stock_analysis.fact_security"
+[0m13:44:50.969649 [debug] [Thread-1 (]: Began executing node model.stock_analysis.fact_security
+[0m13:44:50.975964 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:44:51.344585 [debug] [Thread-1 (]: Writing runtime sql for node "model.stock_analysis.fact_security"
+[0m13:44:51.346174 [debug] [Thread-1 (]: On model.stock_analysis.fact_security: /* {"app": "dbt", "dbt_version": "1.9.2", "profile_name": "stock_analysis", "target_name": "dev", "node_id": "model.stock_analysis.fact_security"} */
+
+  
+    
+
+    create or replace table `dsai-project-462603`.`stock_analysis`.`fact_security`
+      
+    
+    
+
+    OPTIONS()
+    as (
+      
+
+WITH dup_data AS (
+SELECT
+  t.ticker_symbol,
+  DATE(t.date) AS date,
+  t.close_price,
+  t.high_price,
+  t.low_price,
+  t.open_price,
+  t.stock_splits,
+  t.dividend,
+  t.volume_traded,
+  f.GDP_growth_rate,
+  f.UMCSENT,
+  f.inflation_rate,
+  f.interest_rate,
+  f.unemployment_rate,
+  f.industrial_production,
+  f.ten_yr_treasury,
+  i.forward_eps,
+  i.forward_pe,
+  i.market_cap,
+  i.trailing_eps,
+  i.trailing_pe,
+  ta.ema_50,
+  ta.rsi_14,
+  ta.sma_50
+FROM `dsai-project-462603`.`stock_analysis`.`combined_tickers` t
+LEFT JOIN `dsai-project-462603`.`stock_analysis`.`fred` f
+  ON DATE(t.date) = DATE(f.date)
+LEFT JOIN `dsai-project-462603`.`stock_analysis`.`stock_info` i
+  ON t.ticker_symbol = i.ticker_symbol AND DATE(t.date) BETWEEN '2025-04-01' AND '2025-06-30'
+LEFT JOIN `dsai-project-462603`.`stock_analysis`.`techincal_indicator` ta
+  ON DATE(t.date) = DATE(ta.date) and t.ticker_symbol = ta.ticker_symbol
+)
+SELECT 
+  ticker_symbol,
+  date,
+  ANY_VALUE(close_price) AS close_price,
+  ANY_VALUE(high_price) AS high_price,
+  ANY_VALUE(low_price) AS low_price,
+  ANY_VALUE(open_price) AS open_price,
+  ANY_VALUE(stock_splits) AS stock_splits,
+  ANY_VALUE(dividend) AS dividend,
+  ANY_VALUE(volume_traded) AS volume_traded,
+  ANY_VALUE(GDP_growth_rate) AS GDP_growth_rate,
+  ANY_VALUE(UMCSENT) AS UMCSENT,
+  ANY_VALUE(inflation_rate) AS inflation_rate,
+  ANY_VALUE(interest_rate) AS interest_rate,
+  ANY_VALUE(unemployment_rate) AS unemployment_rate,
+  ANY_VALUE(ten_yr_treasury) AS ten_yr_treasury,
+  ANY_VALUE(industrial_production) AS industrial_production,
+  ANY_VALUE(forward_eps) AS forward_eps,
+  ANY_VALUE(forward_pe) AS forward_pe,
+  ANY_VALUE(market_cap) AS market_cap,
+  ANY_VALUE(trailing_eps) AS trailing_eps,
+  ANY_VALUE(trailing_pe) AS trailing_pe,
+  ANY_VALUE(ema_50) AS ema_50,
+  ANY_VALUE(rsi_14) AS rsi_14,
+  ANY_VALUE(sma_50) AS sma_50
+FROM dup_data 
+GROUP BY ticker_symbol, date
+    );
+  
+[0m13:44:51.920928 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=dsai-project-462603&j=bq:US:0b0d50f0-c58a-47ab-b5a4-49438a88a650&page=queryresults
+[0m13:44:54.933363 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b8ca8d78-2076-48b2-891f-d46fa809c2d9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1d83d3cdc0>]}
+[0m13:44:54.934693 [info ] [Thread-1 (]: 3 of 3 OK created sql table model stock_analysis.fact_security ................. [[32mCREATE TABLE (10.6k rows, 2.1 MiB processed)[0m in 3.97s]
+[0m13:44:54.935644 [debug] [Thread-1 (]: Finished running node model.stock_analysis.fact_security
+[0m13:44:54.939180 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:44:54.940475 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:44:54.940983 [debug] [MainThread]: Connection 'model.stock_analysis.fact_security' was properly closed.
+[0m13:44:54.941537 [info ] [MainThread]: 
+[0m13:44:54.942059 [info ] [MainThread]: Finished running 3 table models in 0 hours 0 minutes and 17.81 seconds (17.81s).
+[0m13:44:54.943621 [debug] [MainThread]: Command end result
+[0m13:44:55.027647 [debug] [MainThread]: Wrote artifact WritableManifest to /home/peterlim/user_story/stock_analysis/target/manifest.json
+[0m13:44:55.032034 [debug] [MainThread]: Wrote artifact SemanticManifest to /home/peterlim/user_story/stock_analysis/target/semantic_manifest.json
+[0m13:44:55.044988 [debug] [MainThread]: Wrote artifact RunExecutionResult to /home/peterlim/user_story/stock_analysis/target/run_results.json
+[0m13:44:55.045863 [info ] [MainThread]: 
+[0m13:44:55.046816 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:44:55.047550 [info ] [MainThread]: 
+[0m13:44:55.048845 [info ] [MainThread]: Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
+[0m13:44:55.049968 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 20.907574, "process_in_blocks": "46784", "process_kernel_time": 2.102053, "process_mem_max_rss": "256156", "process_out_blocks": "4120", "process_user_time": 4.337268}
+[0m13:44:55.050970 [debug] [MainThread]: Command `dbt run` succeeded at 13:44:55.050799 after 20.91 seconds
+[0m13:44:55.051630 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1dbd16ad40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1dbc0e2aa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1d83eb0790>]}
+[0m13:44:55.052230 [debug] [MainThread]: Flushing usage events
+[0m13:44:56.362853 [debug] [MainThread]: An error was encountered while trying to flush usage events
