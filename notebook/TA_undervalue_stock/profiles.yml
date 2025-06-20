@@ -1,0 +1,12 @@
+stock_analysis:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: deft-beacon-354008
+      dataset: stock_analysis
+      location: US
+      priority: interactive
+      threads: 1
+      retries: 2

@@ -1,0 +1,4 @@
+{
+  "ticker": ["AAPL","GOOGL","MSFT","AMZN","FB","TSLA", "IBM", "NFLX", "NVDA", "FFIV"],
+  "period": "6y"
+}
