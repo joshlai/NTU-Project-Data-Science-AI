@@ -1,0 +1,10 @@
+
+
+SELECT
+  ticker_symbol,
+  company_description,
+  company_name,
+  country,
+  industry,
+  sector
+FROM `deft-beacon-354008`.`stock_analysis`.`stock_info`
